@@ -28,6 +28,7 @@ def signal_phase_and_timing(data_path, sequence_length=50):
     # logic for loading the CSV, using 'result' (2nd) column as basis for prediction
     with open(data_path) as f:
         data = csv.reader(f, delimiter=",")
+        next(data, None)
         spat = []
         nb_of_values = 0
         for line in data:

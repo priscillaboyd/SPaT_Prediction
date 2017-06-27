@@ -27,12 +27,17 @@ import pandas as pd
 import os
 phases_list = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
 
+source = pd.read_csv('./emulated_data/testdata_short.csv', header=0, skipinitialspace=True)
+source_data = pd.DataFrame(source)
+
+# ensure SUP values are removed
+source_data = source_data[~source_data['Mode Stream 0'].isin(['8 - SUP '])]
+
 def create_df(phase):
-    fields = ['Date', 'Time', 'Aspect 0 of Phase ' + phase + '  State',
-              'Aspect 1 of Phase ' + phase + '  State',
-              'Aspect 2 of Phase ' + phase + '  State']
-    data = pd.read_csv('./emulated_data/testdata_short.csv', header=0, skipinitialspace=True, usecols=fields)
-    df = pd.DataFrame(data)
+    phase_fields = ['Date', 'Time', 'Aspect 0 of Phase ' + phase + '  State',
+                    'Aspect 1 of Phase ' + phase + '  State',
+                    'Aspect 2 of Phase ' + phase + '  State']
+    df = source_data[phase_fields]
     return df
 
 
@@ -118,7 +123,6 @@ for i in range(len(phases_list)):
     print(phase)
 
 
-# TODO: Refactoring needed to split file definition
 # process the
 def create_output_df():
     detector_fields = ['Date', 'Time', 'I/O ASL1 [0] State', 'I/O BSL1 [1] State', 'I/O CSL1 [2] State',
@@ -136,9 +140,8 @@ def create_output_df():
                        'I/O ONCE04 [27] State', 'I/O ONCE05 [29] State', 'I/O ONCF08 [34] State',
                        'I/O ONCF10 [36] State', 'I/O ONCG01 [51] State', 'I/O ONCG03 [53] State',
                        'I/O ONCH06 [57] State', 'I/O ONCH07 [59] State']
-    # TODO: Refactor to use only one file
-    data = pd.read_csv('./emulated_data/testdata_short.csv', header=0, skipinitialspace=True, usecols=detector_fields)
-    df = pd.DataFrame(data)
+
+    df = source_data[detector_fields]
     return df
 
 
