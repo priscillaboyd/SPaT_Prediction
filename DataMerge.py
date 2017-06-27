@@ -21,7 +21,6 @@
 
 import pandas as pd
 
-# TODO: Refactoring needed to read the fields from the config file
 # store desired fields from the processed phase data as array
 phase_fields = ['Date', 'Time', 'Result', 'Phase']
 

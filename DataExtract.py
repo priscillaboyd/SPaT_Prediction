@@ -16,7 +16,8 @@
 """The DataExtract class:
 
 - Processes a traffic simulator file in the expected CSV format
-- Performs analysis and outputs the results for a state of a phase (i.e. red, red/amber, amber or green)
+- Performs analysis and outputs the results for a state of a phase (i.e. red = 0, red/amber = 1, amber = 2
+or green = 3)
 using physical aspect data, outputting results to separate CSV files
 - Extracts the relevant detection data and saves it to a separate CSV file
 
@@ -26,16 +27,11 @@ import pandas as pd
 import os
 phases_list = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
 
-# TODO: Unify data processing modules
-# TODO: Refactoring to handle multiple datasets within the 'results' folder
-# TODO: Refactoring needed to split file definition
-
-
 def create_df(phase):
     fields = ['Date', 'Time', 'Aspect 0 of Phase ' + phase + '  State',
               'Aspect 1 of Phase ' + phase + '  State',
               'Aspect 2 of Phase ' + phase + '  State']
-    data = pd.read_csv('./emulated_data/testdata_20170624_2.csv', header=0, skipinitialspace=True, usecols=fields)
+    data = pd.read_csv('./emulated_data/testdata_short.csv', header=0, skipinitialspace=True, usecols=fields)
     df = pd.DataFrame(data)
     return df
 
@@ -49,7 +45,7 @@ def process_aspects(phase, df):
     red = df[(df[aspect0] == 1) &
              (df[aspect1] == 0) &
              (df[aspect2] == 0)]
-    red['Result'] = 'Red'
+    red['Result'] = '0'
     red['Phase'] = phase
 
     red_output_folder = './results/phases/raw/'
@@ -64,7 +60,7 @@ def process_aspects(phase, df):
     redamber = df[(df[aspect0] == 1) &
                   (df[aspect1] == 1) &
                   (df[aspect2] == 0)]
-    redamber['Result'] = 'RedAmber'
+    redamber['Result'] = '1'
     redamber['Phase'] = phase
 
     redamber_output_folder = './results/phases/raw/'
@@ -81,7 +77,7 @@ def process_aspects(phase, df):
     amber = df[(df[aspect0] == 0) &
                (df[aspect1] == 1) &
                (df[aspect2] == 0)]
-    amber['Result'] = 'Amber'
+    amber['Result'] = '2'
     amber['Phase'] = phase
     amber.to_csv('./results/phases/raw/' + phase + '_' + 'amber_result_out.csv', sep=',')
 
@@ -89,7 +85,7 @@ def process_aspects(phase, df):
     green = df[(df[aspect0] == 0) &
                (df[aspect1] == 0) &
                (df[aspect2] == 1)]
-    green['Result'] = 'Green'
+    green['Result'] = '3'
     green['Phase'] = phase
 
     green_output_folder = './results/phases/raw/'
@@ -141,7 +137,7 @@ def create_output_df():
                        'I/O ONCF10 [36] State', 'I/O ONCG01 [51] State', 'I/O ONCG03 [53] State',
                        'I/O ONCH06 [57] State', 'I/O ONCH07 [59] State']
     # TODO: Refactor to use only one file
-    data = pd.read_csv('./emulated_data/testdata_20170624_2.csv', header=0, skipinitialspace=True, usecols=detector_fields)
+    data = pd.read_csv('./emulated_data/testdata_short.csv', header=0, skipinitialspace=True, usecols=detector_fields)
     df = pd.DataFrame(data)
     return df
 

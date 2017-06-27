@@ -1,3 +1,18 @@
+# Copyright 2017 Priscilla Boyd. All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# ==============================================================================
+
 import matplotlib.pyplot as plt
 import numpy as np
 import csv
@@ -5,15 +20,12 @@ from keras.layers.core import Dense, Activation, Dropout
 from keras.layers.recurrent import LSTM
 from keras.models import Sequential
 
-# TODO: remove seed (only kept for testing purposes)
 np.random.seed(1234)
-
 
 # read CSV data and build test/training data
 def signal_phase_and_timing(data_path, sequence_length=50):
 
     # logic for loading the CSV, using 'result' (2nd) column as basis for prediction
-    # TODO: Adapt to use pds instead for efficiency
     with open(data_path) as f:
         data = csv.reader(f, delimiter=",")
         spat = []
@@ -71,16 +83,16 @@ def build_model():
 def run_RNN():
 
     # define model params
-    num_epochs = 1
+    num_epochs = 5
     sequence_length = 10
-    data_path = './results/dataset_edited2.csv'
+    data_path = './results/dataset.csv'
 
     # grab train and test data from CSV
     X_train, y_train, X_test, y_test = signal_phase_and_timing(data_path, sequence_length)
 
     # build model
     model = build_model()
-    model.fit(X_train, y_train, epochs=num_epochs, batch_size=128, validation_split=0.2)
+    model.fit(X_train, y_train, epochs=num_epochs, batch_size=16, validation_split=0.2)
 
     # predict
     predict = model.predict(X_test)
