@@ -39,7 +39,7 @@ import os
 
 import time
 
-raw_data = './emulated_data/testdata_short.csv'
+raw_data = './emulated_data/sample_data_small.csv'
 source = pd.read_csv(raw_data, header=0, skipinitialspace=True)
 source_data = pd.DataFrame(source)
 # ensure SUP values are removed
