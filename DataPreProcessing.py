@@ -22,15 +22,13 @@ or green = 3)
 using physical aspect data, outputting results to separate CSV files
 - Extracting the relevant detection data and saves it to a separate CSV file
 
-
 Cleans the data by:
 - Taking CSV files with stage/phase information and filters them, leaving only
 data with on date, time, result and phase fields
 - Taking individual files for stages (with their data/time and result) and merging
 into a single file for analysis
 
-
-Combined the data by:
+Combines the data by:
 - Mergin all phase data and I/O detection data into a single file
 
 """
@@ -39,14 +37,24 @@ import pandas as pd
 from pathlib import Path
 import os
 
+import time
+
 raw_data = './emulated_data/testdata_short.csv'
 source = pd.read_csv(raw_data, header=0, skipinitialspace=True)
 source_data = pd.DataFrame(source)
 # ensure SUP values are removed
 source_data = source_data[~source_data['Mode Stream 0'].isin(['8 - SUP '])]
 
+# get current date and time
+current_dt = time.strftime("%Y%m%d_%H%M%S")
+
+# create folder for results
+results_folder = './results/' + current_dt + '/'
+if not os.path.exists(results_folder):
+    os.makedirs(results_folder, mode=0o777)
+
 # define raw output folder
-raw_output_folder = './results/phases/raw/'
+raw_output_folder = results_folder + 'phases/raw/'
 
 # store desired fields as array
 phase_fields = ['Date', 'Time', 'Result', 'Phase']
@@ -151,7 +159,7 @@ def load_io_data():
     data = create_io_df()
 
     # create folder for results
-    io_output_folder = './results/io/'
+    io_output_folder = results_folder + 'io/'
     if not os.path.exists(io_output_folder):
         os.makedirs(io_output_folder, mode=0o777)
 
@@ -167,6 +175,7 @@ def data_extract():
     load_io_data()
 
 
+# filter phase data to ensure only desired fields are applied
 def filter_phase_data():
     # path to analyse
     path_list = Path(raw_output_folder).glob('**/*.csv')
@@ -176,13 +185,13 @@ def filter_phase_data():
     for path in path_list:
         path_in_str = str(path)
         file_name = os.path.basename(path_in_str)
-        full_path = './results/phases/raw/' + file_name
+        full_path = results_folder + 'phases/raw/' + file_name
         data = pd.read_csv(full_path, header=0, skipinitialspace=True, usecols=phase_fields)
         df = pd.DataFrame(data)
 
         # only output to CSV those which contain some data
         if df.shape[0] > 0:
-            output_folder = './results/phases/processed/'
+            output_folder = results_folder + 'phases/processed/'
             file_name = 'clean_' + file_name
 
             # ensure folder exists before creating the file
@@ -192,6 +201,7 @@ def filter_phase_data():
             df.to_csv(output_folder + file_name, sep=',')
     print("Phase data filtered!")
 
+
 # combines data from processed/filtered data to a single file
 def combine_phase_data():
     print("Combining phase data...")
@@ -199,28 +209,30 @@ def combine_phase_data():
     out_df = pd.DataFrame([])
 
     # loop through files in the given path and store data in df
-    path_list = Path('./results/phases/processed/').glob('**/*.csv')
+    path_list = Path(results_folder + 'phases/processed/').glob('**/*.csv')
     for path in path_list:
         path_in_str = str(path)
         file_name = os.path.basename(path_in_str)
-        full_path = './results/phases/processed/' + file_name
+        full_path = results_folder + 'phases/processed/' + file_name
         data = pd.read_csv(full_path, header=0, skipinitialspace=True, usecols=phase_fields)
         df = pd.DataFrame(data)
         # append a df to contain only the relevant information in ascending order
         out_df = df.append(out_df)
         out_df = out_df.sort_values(['Date', 'Time', 'Phase'], ascending=[True, True, True])
-        out_df.to_csv('./results/phases/raw/merged_phases.csv', sep=',')
+        out_df.to_csv(results_folder + 'phases/raw/merged_phases.csv', sep=',')
     print("Data combined!")
+
 
 # remove duplicates from the file (i.e. ensuring only one record per second)
 def remove_duplicates_phase_data():
     print("Removing any duplicates...")
-    merged_phases_data = pd.read_csv('./results/phases/raw/merged_phases.csv', header=0,
+    merged_phases_data = pd.read_csv(results_folder + 'phases/raw/merged_phases.csv', header=0,
                                      skipinitialspace=True, usecols=phase_fields)
     df = pd.DataFrame(merged_phases_data)
     clean_df = df.drop_duplicates()
-    clean_df.to_csv('./results/phases/processed/clean_merged_phases.csv', sep=',', index=False)
+    clean_df.to_csv(results_folder + 'phases/processed/clean_merged_phases.csv', sep=',', index=False)
     print("Duplicates removed!")
+
 
 # run data cleaning processes
 def data_cleaning():
@@ -233,9 +245,9 @@ def data_cleaning():
 def data_merge():
     print("Merging final data...")
     # load files that contain phase and I/O processed data and store as dfs
-    phase_data = pd.read_csv('./results/phases/processed/clean_merged_phases.csv', header=0, skipinitialspace=True,
+    phase_data = pd.read_csv(results_folder + 'phases/processed/clean_merged_phases.csv', header=0, skipinitialspace=True,
                              usecols=phase_fields)
-    detection_data = pd.read_csv('./results/io/io_out.csv', header=0, skipinitialspace=True, usecols=detector_fields)
+    detection_data = pd.read_csv(results_folder + 'io/io_out.csv', header=0, skipinitialspace=True, usecols=detector_fields)
     phase_df = pd.DataFrame(phase_data)
     detection_df = pd.DataFrame(detection_data)
 
@@ -244,12 +256,12 @@ def data_merge():
 
     # store the output with any duplicates dropped and create a final CSV file
     merged_data = output.drop_duplicates()
-    merged_data.to_csv('./results/dataset.csv', sep=',', index=False)
+    merged_data.to_csv(results_folder + 'dataset.csv', sep=',', index=False)
     print("Data merged!")
-    print("Final dataset available: " + './results/dataset.csv')
+    print("Final dataset available: " + results_folder + 'dataset.csv')
 
 
-# main function
+# main function runs extract, clean and merge data processes
 if __name__ == '__main__':
     data_extract()
     data_cleaning()
