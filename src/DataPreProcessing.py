@@ -39,7 +39,7 @@ import os
 
 import time
 
-raw_data = './emulated_data/sample_data_small.csv'
+raw_data = './data/sample_data_small.csv'
 source = pd.read_csv(raw_data, header=0, skipinitialspace=True)
 source_data = pd.DataFrame(source)
 # ensure SUP values are removed
@@ -49,7 +49,7 @@ source_data = source_data[~source_data['Mode Stream 0'].isin(['8 - SUP '])]
 current_dt = time.strftime("%Y%m%d_%H%M%S")
 
 # create folder for results
-results_folder = './results/' + current_dt + '/'
+results_folder = '../results/' + current_dt + '/'
 if not os.path.exists(results_folder):
     os.makedirs(results_folder, mode=0o777)
 
@@ -137,7 +137,7 @@ def process_aspect_df(phase, df):
 
 # extracts phase data from the dataset
 def load_phase_data():
-    phase_list = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
+    phase_list = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
     print("Loading phase data...")
     # iterate over phases to get stats
     for i in range(len(phase_list)):
@@ -245,9 +245,10 @@ def data_cleaning():
 def data_merge():
     print("Merging final data...")
     # load files that contain phase and I/O processed data and store as dfs
-    phase_data = pd.read_csv(results_folder + 'phases/processed/clean_merged_phases.csv', header=0, skipinitialspace=True,
-                             usecols=phase_fields)
-    detection_data = pd.read_csv(results_folder + 'io/io_out.csv', header=0, skipinitialspace=True, usecols=detector_fields)
+    phase_data = pd.read_csv(results_folder + 'phases/processed/clean_merged_phases.csv', header=0,
+                             skipinitialspace=True, usecols=phase_fields)
+    detection_data = pd.read_csv(results_folder + 'io/io_out.csv', header=0, skipinitialspace=True,
+                                 usecols=detector_fields)
     phase_df = pd.DataFrame(phase_data)
     detection_df = pd.DataFrame(detection_data)
 
