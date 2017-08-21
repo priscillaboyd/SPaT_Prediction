@@ -19,7 +19,7 @@ Prepares the data by:
 - Creating a CSV file with phase, result, duration until change of each state
 - Ensures the data is suitable for scikit-learn (e.g. phase types are represented numerically)
 
-Implements the Random Forest ensemble
+Implements the CART algorithm for decision trees
 
 """
 import pandas as pd
