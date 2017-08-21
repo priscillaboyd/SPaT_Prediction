@@ -15,13 +15,11 @@
 
 """The DT class:
 
-Prepares the data by:
-- Creating a CSV file with phase, result, duration until change of each state
-- Ensures the data is suitable for sklearn (e.g. phase types are represented numerically)
-
 Implements the CART algorithm for decision trees
 
 """
+import os
+
 import pandas as pd
 
 from sklearn.model_selection import train_test_split
@@ -29,12 +27,27 @@ from sklearn.tree import DecisionTreeRegressor, export_graphviz
 import matplotlib.pyplot as plt
 
 
+# returns the latest dataset location
+def get_latest_dataset_folder():
+    folder = '../results/'
+    latest_location = max([os.path.join(folder, d) for d in os.listdir(folder)])
+    return latest_location
+
+
+# returns the latest dataset
+def get_latest_dataset():
+    latest_folder = get_latest_dataset_folder()
+    file = latest_folder + '/sklearn_dataset.csv'
+    return file
+
+
 # get X and y for sklearn models, excluding date/time stamps
 def get_sklearn_data():
-    data = pd.read_csv('../results/20170821_154732/scikit_dataset.csv', usecols=['Phase', 'Result', 'Duration'],
-                       sep=',')
+    file = get_latest_dataset()
+    data = pd.read_csv(file, usecols=['Phase', 'Result', 'Duration'], sep=',')
     X = data.drop('Duration', axis=1)
     y = data.Duration
+    print("Dataset used: ", file)
     return X, y
 
 
@@ -55,7 +68,9 @@ def run_CART():
     dt_model.predict(X_test)
 
     # expose to tree graphviz format for analysis
-    export_graphviz(dt_model, out_file='../results/20170813_114136/dt_tree.dot', feature_names=X_train.columns)
+    folder = get_latest_dataset_folder()
+    out_file_location = folder + "/dt_tree.dot"
+    export_graphviz(dt_model, out_file=out_file_location, feature_names=X_train.columns)
 
     # predict on new (test) data and encapsulate result in data frame
     y_prediction = dt_model.predict(X_test)
@@ -71,8 +86,7 @@ def run_CART():
     plt.ylabel('y_test')
     plt.show()
 
+
 # main function runs data processing for decision trees
 if __name__ == '__main__':
-    # df = prepare_dt_data()
-    # run_random_forest()
     run_CART()

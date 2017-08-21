@@ -31,6 +31,10 @@ into a single file for analysis
 Combines the data by:
 - Mergin all phase data and I/O detection data into a single file
 
+Prepares the data for sklearn models by:
+- Creating a CSV file with phase, result, duration until change of each state
+- Ensures the data is suitable for sklearn (e.g. phase types are represented numerically)
+
 """
 
 import pandas as pd
