@@ -36,13 +36,14 @@ Prepares the data for sklearn models by:
 - Ensures the data is suitable for sklearn (e.g. phase types are represented numerically)
 
 """
-
 import pandas as pd
+import numpy as np
 from pathlib import Path
 import os
 import time
 
-raw_data = './data/sample_data_small.csv'
+raw_data = './data/20170821_2.csv'
+cfg_file = './data/e80374.8SD'
 source = pd.read_csv(raw_data, header=0, skipinitialspace=True)
 source_data = pd.DataFrame(source)
 # ensure SUP values are removed
@@ -62,22 +63,49 @@ raw_output_folder = results_folder + 'phases/raw/'
 # store desired fields as array
 phase_fields = ['Date', 'Time', 'Result', 'Phase']
 
+
+# get the list of I/O names and IDs via a config file
+def get_io_list_from_config(file):
+    io_list = []
+
+    for record in open(cfg_file):
+        word = record.strip()
+
+        # check if line starts with 'IOLine'
+        if word.startswith('IOLine'):
+
+            full_line = record.rstrip()
+            entries = full_line.split(',')
+
+            # get the I/O name
+            io_record = entries[0].strip()
+            io_name = io_record.split(':')[1]
+
+            # get the I/O ID based on the number after 'IOLine'
+            io_id_record = io_record.rsplit('IOLine')
+            io_id = io_id_record[1].rsplit(':')
+            io_id = io_id[0]
+
+            # process as long as it has an I/O associated with the record
+            if io_name is not '':
+                # aggregate the record info to match the data file and append to list
+                record = "I/O " + io_name + " [" + io_id + "] " + "State"
+                io_list.append(record)
+
+    return io_list
+
+
+# adds date/time fields to the detector fields (for desired results)
+def get_detector_fields():
+    desired_detector_fields = get_io_list_from_config(cfg_file)
+    desired_detector_fields.insert(0, 'Date')
+    desired_detector_fields.insert(1, 'Time')
+    return desired_detector_fields
+
+
 # store desired fields from the processed I/O detection data as array
-detector_fields = ['Date', 'Time', 'I/O ASL1 [0] State', 'I/O BSL1 [1] State', 'I/O CSL1 [2] State',
-                   'I/O DSL1 [3] State', 'I/O AR1 [4] State', 'I/O AR1 [4] State',
-                   'I/O SLDA05 [16] State', 'I/O SLDB10 [18] State', 'I/O SLDC02 [20] State',
-                   'I/O SLDD07 [22] State',
-                   'I/O MVDA05 [17] State', 'I/O MVDB10 [19] State', 'I/O MVDC02 [21] State',
-                   'I/O MVDD07 [23] State',
-                   'I/O PBE04 [24] State', 'I/O PBE05 [25] State', 'I/O PBF08 [30] State',
-                   'I/O PBF09 [31] State', 'I/O PBF10 [32] State', 'I/O PBG01 [48] State',
-                   'I/O PBG03 [49] State', 'I/O PBH06 [54] State', 'I/O PBH07 [55] State',
-                   'I/O KSDE04 [26] State', 'I/O KSDE05 [28] State', 'I/O KSDF08 [33] State',
-                   'I/O KSDF10 [35] State', 'I/O KSDG01 [50] State', 'I/O KSDG03 [52] State',
-                   'I/O KSDH06 [56] State', 'I/O KSDH07 [58] State',
-                   'I/O ONCE04 [27] State', 'I/O ONCE05 [29] State', 'I/O ONCF08 [34] State',
-                   'I/O ONCF10 [36] State', 'I/O ONCG01 [51] State', 'I/O ONCG03 [53] State',
-                   'I/O ONCH06 [57] State', 'I/O ONCH07 [59] State']
+detector_fields = get_detector_fields()
+
 
 # create initial data frame for a given phase
 def create_aspect_df(phase):
@@ -340,5 +368,5 @@ if __name__ == '__main__':
     merged_data = data_merge()
 
     # process data to use with scikit-learn models
-    sklearn_data_processing(merged_data)
+    # sklearn_data_processing(merged_data)
 
