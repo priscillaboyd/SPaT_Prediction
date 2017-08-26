@@ -21,6 +21,7 @@ Implements the CART algorithm for decision trees
 import os
 
 import pandas as pd
+from sklearn.ensemble import RandomForestRegressor
 
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeRegressor, export_graphviz
@@ -60,8 +61,8 @@ def run_CART():
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1)
 
     # create decision tree model
-    dt_model = DecisionTreeRegressor(max_depth=4)
-    # rf_model = RandomForestRegressor(n_estimators=1000, oob_score=True, random_state=1)
+    dt_model = DecisionTreeRegressor(max_depth=4, presort=True)
+    # dt_model = RandomForestRegressor(n_estimators=1000, oob_score=True, random_state=1)
 
     # fit model using training data
     dt_model.fit(X_train, y_train)

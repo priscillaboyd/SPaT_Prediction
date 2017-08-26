@@ -302,8 +302,8 @@ def sklearn_data_processing(dataset):
     phase_data = pd.read_csv(dataset, header=0, skipinitialspace=True, usecols=fields, parse_dates=[['Date', 'Time']])
     df = pd.DataFrame(phase_data)
 
-    # load list of phases and states
-    phase_list = ['A', 'B', 'C', 'D', 'E', 'F']
+    # load list of phases and states (excluding phases E and F as they are pedestrian phases)
+    phase_list = ['A', 'B', 'C', 'D']
 
     new_columns = ['Phase', 'Result', 'Start', 'End', 'Duration']
     df_new_columns = pd.DataFrame(columns=new_columns)
@@ -319,6 +319,7 @@ def sklearn_data_processing(dataset):
         df2 = df[df['Phase'] == phase]
 
         print("Preparing data for phase " + phase + "...")
+
         # initialise by using the very first record
         start_time = df2['Date_Time'].values[0]
         current_result = df2['Result'].values[0]
@@ -334,12 +335,12 @@ def sklearn_data_processing(dataset):
             if df2['Result'].values[i] != current_result or i+1 == len(df2.index):
                 df_start = pd.to_datetime(start_time)
                 df_end = pd.to_datetime(end_time)
-                duration = pd.Timedelta(df_end - df_start).seconds
 
-                # if the time is the same, force duration = 1
-                if (duration == 86399.0) or (duration == 86398.0):
-                    df_end = df_start
-                    duration = 1.0
+                # # start > end will happen if only 1 second record, so set duration = 1
+                if df_start > df_end:
+                    duration = 1
+                else:
+                    duration = pd.Timedelta(df_end - df_start).seconds
 
                 # convert phase ID to int (to cater for scikit-learn requirements)
                 phase_value = str(x)
