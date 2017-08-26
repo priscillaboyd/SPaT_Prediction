@@ -37,7 +37,6 @@ Prepares the data for sklearn models by:
 
 """
 import pandas as pd
-import numpy as np
 from pathlib import Path
 import os
 import time
@@ -46,6 +45,7 @@ raw_data = './data/20170821_2.csv'
 cfg_file = './data/e80374.8SD'
 source = pd.read_csv(raw_data, header=0, skipinitialspace=True)
 source_data = pd.DataFrame(source)
+
 # ensure SUP values are removed
 source_data = source_data[~source_data['Mode Stream 0'].isin(['8 - SUP '])]
 
@@ -290,7 +290,7 @@ def data_merge():
     merged_data = output.drop_duplicates()
     merged_data.to_csv(results_folder + 'dataset.csv', sep=',', index=False)
     print("Data merged!")
-    print("Final dataset available: " + results_folder + 'dataset.csv')
+    print("Main dataset available: " + results_folder + 'dataset.csv')
     return results_folder + 'dataset.csv'
 
 
@@ -303,7 +303,7 @@ def sklearn_data_processing(dataset):
     df = pd.DataFrame(phase_data)
 
     # load list of phases and states
-    phase_list = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']
+    phase_list = ['A', 'B', 'C', 'D', 'E', 'F']
 
     new_columns = ['Phase', 'Result', 'Start', 'End', 'Duration']
     df_new_columns = pd.DataFrame(columns=new_columns)
@@ -318,7 +318,7 @@ def sklearn_data_processing(dataset):
         # create a df for phase A only
         df2 = df[df['Phase'] == phase]
 
-        print("Preparing data...")
+        print("Preparing data for phase " + phase + "...")
         # initialise by using the very first record
         start_time = df2['Date_Time'].values[0]
         current_result = df2['Result'].values[0]
@@ -337,7 +337,7 @@ def sklearn_data_processing(dataset):
                 duration = pd.Timedelta(df_end - df_start).seconds
 
                 # if the time is the same, force duration = 1
-                if duration == 86399.0:
+                if (duration == 86399.0) or (duration == 86398.0):
                     df_end = df_start
                     duration = 1.0
 
@@ -352,12 +352,10 @@ def sklearn_data_processing(dataset):
                 current_result = df2['Result'].values[i]
                 start_time = df2['Date_Time'].values[i]
 
-        print(df_new_columns)
-
     # write result further to csv
     df_new_columns.to_csv(results_folder + 'sklearn_dataset.csv', sep=',', index=False,
                           header=False, mode='a')
-    print("Prepared dataset available: " + results_folder + "sklearn_dataset.csv")
+    print("Sk-learn dataset available: " + results_folder + "sklearn_dataset.csv")
 
 
 # main function runs extract, clean and merge data processes
@@ -368,5 +366,5 @@ if __name__ == '__main__':
     merged_data = data_merge()
 
     # process data to use with scikit-learn models
-    # sklearn_data_processing(merged_data)
+    sklearn_data_processing(merged_data)
 
