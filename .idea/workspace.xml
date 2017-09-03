@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f613a19-c67f-414e-8128-21c222c50d50" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DataAnalysis.py" afterPath="$PROJECT_DIR$/src/preprocessing/Analysis.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/datapreprocessing/Clean.py" afterPath="$PROJECT_DIR$/src/preprocessing/Clean.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/datapreprocessing/Extract.py" afterPath="$PROJECT_DIR$/src/preprocessing/Extract.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/datapreprocessing/ExtractSkLearn.py" afterPath="$PROJECT_DIR$/src/preprocessing/ExtractSkLearn.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/datapreprocessing/Main.py" afterPath="$PROJECT_DIR$/src/preprocessing/Main.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/datapreprocessing/Merge.py" afterPath="$PROJECT_DIR$/src/preprocessing/Merge.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/datapreprocessing/Utils.py" afterPath="$PROJECT_DIR$/src/preprocessing/Utils.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/datapreprocessing/__init__.py" afterPath="$PROJECT_DIR$/src/preprocessing/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/machine_learning/__init__.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DT.py" afterPath="$PROJECT_DIR$/src/machine_learning/DT.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/RNN_LSTM.py" afterPath="$PROJECT_DIR$/src/machine_learning/RNN_LSTM.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Tools_ML.py" afterPath="$PROJECT_DIR$/src/machine_learning/Tools_ML.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/sample_data_small.csv" afterPath="$PROJECT_DIR$/data/sample_data_small.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/TestDPPUtils.py" afterPath="$PROJECT_DIR$/test/TestDPPUtils.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -44,8 +39,8 @@
           <file leaf-file-name="Analysis.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/preprocessing/Analysis.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="405">
-                  <caret line="120" column="0" lean-forward="true" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+                <state relative-caret-position="240">
+                  <caret line="109" column="33" lean-forward="true" selection-start-line="109" selection-start-column="33" selection-end-line="109" selection-end-column="33" />
                   <folding>
                     <element signature="e#1007#1038#0" expanded="true" />
                   </folding>
@@ -275,6 +270,10 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="preprocessing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -290,7 +289,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="preprocessing" />
+              <option name="myItemId" value="machine_learning" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -324,11 +323,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/models" />
+      <recent name="$PROJECT_DIR$/src/machine_learning" />
+      <recent name="$PROJECT_DIR$/src/machine_learning/" />
       <recent name="$PROJECT_DIR$/src/preprocessing/" />
       <recent name="$PROJECT_DIR$/src/" />
-      <recent name="$PROJECT_DIR$/src/dataanalysis" />
-      <recent name="$PROJECT_DIR$/src/dataprocessing" />
-      <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -356,7 +355,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="SPaT_Prediction" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/DT.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/machine_learning/DT.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -851,7 +850,14 @@
       <option name="project" value="LOCAL" />
       <updated>1504442080203</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Fix to issues priscillaboyd/SPaT_Prediction#23 and priscillaboyd/SPaT_Prediction#24">
+      <created>1504443531713</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1504443531713</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -888,7 +894,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="-42" width="1920" height="989" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -899,13 +904,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44010767" sideWeight="0.13125" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2923913" sideWeight="0.86875" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2923913" sideWeight="0.86875" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -979,7 +984,8 @@
     <MESSAGE value="Refactoring to increase modularity with improvements such as removal of relative paths, module name changes, creation of a Utils module for re-usable functionality" />
     <MESSAGE value="Refactoring to remove duplicated features, improved comments" />
     <MESSAGE value="Fix to issue priscillaboyd/SPaT_Prediction#12" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix to issue priscillaboyd/SPaT_Prediction#12" />
+    <MESSAGE value="Fix to issues priscillaboyd/SPaT_Prediction#23 and priscillaboyd/SPaT_Prediction#24" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix to issues priscillaboyd/SPaT_Prediction#23 and priscillaboyd/SPaT_Prediction#24" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -999,13 +1005,6 @@
     <entry file="file://$PROJECT_DIR$/DataExtract.py" />
     <entry file="file://$PROJECT_DIR$/DataCleaning.py" />
     <entry file="file://$PROJECT_DIR$/DataMerge.py" />
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="17" lean-forward="true" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/results/20170813_114136/dataset.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1017,13 +1016,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
           <caret line="1319" column="0" lean-forward="false" selection-start-line="1319" selection-start-column="0" selection-end-line="1319" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SPaT_Prediction.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -1161,7 +1153,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/RNN_LSTM.py">
+    <entry file="file://$PROJECT_DIR$/src/machine_learning/RNN_LSTM.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1592">
           <caret line="111" column="14" lean-forward="true" selection-start-line="111" selection-start-column="14" selection-end-line="111" selection-end-column="14" />
@@ -1203,7 +1195,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tools_ML.py">
+    <entry file="file://$PROJECT_DIR$/src/machine_learning/Tools_ML.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
@@ -1213,13 +1205,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DT.py">
+    <entry file="file://$PROJECT_DIR$/src/machine_learning/DT.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="38" column="107" lean-forward="false" selection-start-line="38" selection-start-column="107" selection-end-line="38" selection-end-column="107" />
-          <folding>
-            <element signature="e#754#831#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1317,10 +1307,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="17" lean-forward="true" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SPaT_Prediction.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/preprocessing/Analysis.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="120" column="0" lean-forward="true" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+        <state relative-caret-position="240">
+          <caret line="109" column="33" lean-forward="true" selection-start-line="109" selection-start-column="33" selection-end-line="109" selection-end-column="33" />
           <folding>
             <element signature="e#1007#1038#0" expanded="true" />
           </folding>

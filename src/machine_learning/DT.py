@@ -19,15 +19,10 @@ Implements the CART algorithm for decision trees
 
 """
 from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
-from sklearn.model_selection import GridSearchCV, TimeSeriesSplit, cross_val_score, cross_val_predict
-from sklearn.model_selection import train_test_split
-from sklearn.tree import DecisionTreeRegressor, export_graphviz
-from Tools_ML import get_latest_dataset_folder, get_latest_dataset, get_sklearn_data
 from sklearn.metrics import mean_squared_error
-import matplotlib.pyplot as plttrai
-import numpy as np
-from orangecontrib.timeseries import *
-import pandas as pd
+from sklearn.model_selection import train_test_split
+
+from machine_learning.Tools_ML import get_latest_dataset, get_sklearn_data
 
 
 # implement CART
