@@ -13,17 +13,18 @@
 # limitations under the License.
 # ==============================================================================
 
-"""The DataMerge class combines the data by:
+"""The Merge class combines the data by:
 
-- Merging all phase data and I/O detection data into a single file
+    - Merging all phase data and I/O detection data into a single file
 
 """
 
 import pandas as pd
+from datapreprocessing.Utils import results_folder, output_fields
 
 
 # combine all data into single file
-def data_merge(results_folder, output_fields, detector_fields):
+def data_merge(detector_fields):
     print("Merging final data...")
     # load files that contain phase and I/O processed data and store as dfs
     phase_data = pd.read_csv(results_folder + 'phases/processed/clean_merged_phases.csv', header=0,

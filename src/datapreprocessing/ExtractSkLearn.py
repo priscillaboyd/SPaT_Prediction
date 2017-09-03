@@ -13,18 +13,18 @@
 # limitations under the License.
 # ==============================================================================
 
-"""The DataExtractSkLearn class:
+"""The ExtractSkLearn class prepares the data for sklearn models by:
 
-Prepares the data for sklearn models by:
-- Creating a CSV file with phase, result, duration until change of each state
-- Ensures the data is suitable for sklearn (e.g. phase types are represented numerically)
+    - Creating a CSV file with phase, result, duration until change of each state
+    - Ensures the data is suitable for sklearn (e.g. phase types are represented numerically)
 
 """
 import pandas as pd
+from datapreprocessing.Utils import results_folder
 
 
 # process data for scikit-learn
-def sklearn_data_processing(dataset, results_folder):
+def sklearn_data_processing(merged_data):
 
     print("Creating Scikit-Learn dataset...")
 
@@ -32,7 +32,7 @@ def sklearn_data_processing(dataset, results_folder):
     fields = ['Date', 'Time', 'Result', 'Phase']
 
     # load data and parse date/time to a single Date_Time column
-    phase_data = pd.read_csv(dataset, header=0, skipinitialspace=True, usecols=fields, parse_dates=[['Date', 'Time']])
+    phase_data = pd.read_csv(merged_data, header=0, skipinitialspace=True, usecols=fields, parse_dates=[['Date', 'Time']])
     df = pd.DataFrame(phase_data)
 
     # load list of phases and states (excluding phases E and F as they are pedestrian phases)
@@ -50,8 +50,6 @@ def sklearn_data_processing(dataset, results_folder):
 
         # create a df for phase A only
         df2 = df[df['Phase'] == phase]
-
-        print("Preparing data for phase " + phase + "...")
 
         # initialise by using the very first record
         start_time = df2['Date_Time'].values[0]
@@ -89,4 +87,5 @@ def sklearn_data_processing(dataset, results_folder):
     # write result further to csv
     df_new_columns.to_csv(results_folder + 'sklearn_dataset.csv', sep=',', index=False,
                           header=False, mode='a')
+
     print("Scikit-learn dataset available: " + results_folder + "sklearn_dataset.csv")

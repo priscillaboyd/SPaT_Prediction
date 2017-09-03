@@ -13,37 +13,32 @@
 # limitations under the License.
 # ==============================================================================
 
-"""The DataPreProcessing class:
+"""The Main class is responsible for running methods to:
 
-Runs:
-    - Data Extract (Generic)
-    - Data Cleaning
-    - Data Merge
-    - Sk Learn Data Extract
+    - Extract data from a given CSV file with historic traffic information
+    - Clean data as part of pre-processing for machine learning
+    - Merge data into a single file for manipulation
+    - Adapt to be used with the scikit-learn framework
 
 """
 
-from datapreprocessing.Clean import data_cleaning
-from datapreprocessing.Extract import data_extract
+from datapreprocessing.Clean import clean
+from datapreprocessing.Extract import extract
 from datapreprocessing.ExtractSkLearn import sklearn_data_processing
 from datapreprocessing.Merge import data_merge
-from datapreprocessing.Utils import get_results_folder, get_output_fields, get_detector_fields
+from datapreprocessing.Utils import get_detector_fields
 
-raw_data = '20170821_2.csv'
+raw_data = '30min.csv'
 cfg_file = 'e80374.8SD'
 
-# create folder for results
-results_folder = get_results_folder()
-
-# declare fields
-output_fields = get_output_fields()
-detector_fields = get_detector_fields(cfg_file)
-
 if __name__ == '__main__':
-    # extract, clean and merge data
-    data_extract(raw_data, cfg_file)
-    data_cleaning()
-    merged_data = data_merge(results_folder, output_fields, detector_fields)
+    # extract and clean data
+    extract(raw_data, cfg_file)
+    clean()
 
-    # # process data to use with scikit-learn models
-    sklearn_data_processing(merged_data, results_folder)
+    # merge data with the detector fields in the config file
+    detector_fields = get_detector_fields(cfg_file)
+    merged_data = data_merge(detector_fields)
+
+    # process merged data further to use with scikit-learn models
+    sklearn_data_processing(merged_data)

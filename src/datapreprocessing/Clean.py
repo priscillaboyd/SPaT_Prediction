@@ -13,33 +13,28 @@
 # limitations under the License.
 # ==============================================================================
 
-"""The DataCleaning class:
+"""The Clean class cleans the data by:
 
-Cleans the data by:
-- Taking CSV files with stage/phase information and filters them, leaving only
-data with on date, time, result and phase fields
-- Taking individual files for stages (with their data/time and result) and merging
-into a single file for analysis
+    - Taking CSV files with stage/phase information and filters them, leaving only
+    data with on date, time, result and phase fields
+    - Taking individual files for stages (with their data/time and result) and merging
+    into a single file for analysis
 
 """
 
 import os
 import pandas as pd
 from pathlib import Path
-from datapreprocessing.Utils import get_output_fields, get_results_folder, get_raw_output_folder, \
-    create_folder_is_not_exists
-
-# declare output fields to be used
-output_fields = get_output_fields()
-results_folder = get_results_folder()
+from datapreprocessing.Utils import create_folder_is_not_exists, output_fields, \
+    raw_output_folder, results_folder
 
 
-# filter phase data to ensure only desired fields are applied
-def filter_phase_data(folder):
+# filter phase data for files in raw data folder to ensure only desired fields are taken
+def filter_phase_data():
     print("Filtering phase data...")
 
     # path to analyse
-    path_list = Path(folder).glob('**/*.csv')
+    path_list = Path(raw_output_folder).glob('**/*.csv')
 
     # loop through files in the given path and store desired fields as array
     for path in path_list:
@@ -98,9 +93,7 @@ def remove_duplicates_phase_data():
 
 
 # run data cleaning processes
-def data_cleaning():
-    raw_output_folder = get_raw_output_folder()
-
-    filter_phase_data(raw_output_folder)
+def clean():
+    filter_phase_data()
     combine_phase_data()
     remove_duplicates_phase_data()

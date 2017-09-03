@@ -15,7 +15,7 @@
 
 """The Utils class:
 
-- Provides functions to be used with other classes relating to data manipulation
+    - Provides functions to be used with other classes relating to data manipulation
 
 """
 import os
@@ -25,6 +25,10 @@ from Definitions import root
 
 # grab root path from project definitions
 root_path = root
+
+# declare fields
+output_fields = ['Date', 'Time', 'Result', 'Phase']
+
 
 # converts the raw data (CSV file) into a data frame
 def convert_raw_data_to_df(raw_data):
@@ -56,10 +60,10 @@ def get_output_fields():
 # adds date/time fields to the detector fields (for desired results)
 def get_detector_fields(cfg_file):
     cfg_file = root_path + '/data/' + cfg_file
-    desired_detector_fields = get_io_list_from_config(cfg_file)
-    desired_detector_fields.insert(0, 'Date')
-    desired_detector_fields.insert(1, 'Time')
-    return desired_detector_fields
+    detector_fields = get_io_list_from_config(cfg_file)
+    detector_fields.insert(0, 'Date')
+    detector_fields.insert(1, 'Time')
+    return detector_fields
 
 
 # get the location of the (latest created) results folder
@@ -67,13 +71,13 @@ def get_results_folder():
     results_folder = root_path + '/results/' + current_dt + '/'
     return results_folder
 
-
-# define and create raw output folder if it doesn't exist yet
-def get_raw_output_folder():
-    results_folder = get_results_folder()
-    raw_output_folder = results_folder + 'phases/raw/'
-    create_folder_is_not_exists(raw_output_folder)
-    return raw_output_folder
+#
+# # define and create raw output folder if it doesn't exist yet
+# def get_raw_output_folder():
+#     results_folder = get_results_folder()
+#     raw_output_folder = results_folder + 'phases/raw/'
+#     create_folder_is_not_exists(raw_output_folder)
+#     return raw_output_folder
 
 
 # get the list of I/O names and IDs via a config file
@@ -108,3 +112,8 @@ def get_io_list_from_config(file):
 
 # get current date and time
 current_dt = get_current_datetime()
+results_folder = root_path + '/results/' + current_dt + '/'
+
+# initialise raw folder
+raw_output_folder = results_folder + 'phases/raw/'
+create_folder_is_not_exists(raw_output_folder)
