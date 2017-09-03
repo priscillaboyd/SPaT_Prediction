@@ -22,7 +22,7 @@
 """
 
 # extracts phase data from the data set
-from datapreprocessing.Utils import create_folder_is_not_exists, get_detector_fields, \
+from datapreprocessing.Utils import create_folder_if_not_exists, get_detector_fields, \
     convert_raw_data_to_df, results_folder, raw_output_folder
 
 
@@ -49,7 +49,7 @@ def extract_io_data(detector_fields, df):
     # get data frame with relevant i/o fields
     io_df = df[detector_fields]
     io_output_folder = results_folder + 'io/'
-    create_folder_is_not_exists(io_output_folder)
+    create_folder_if_not_exists(io_output_folder)
 
     # process results
     io_output_filename = 'io_' + 'out.csv'
@@ -109,14 +109,15 @@ def process_aspect_df(phase, df):
     green.to_csv(raw_output_folder + green_output_filename, sep=',')
 
     # process errors (do not write to file)
-    # TODO: Print errors if they exist
     error = df[(df[aspect0] == 0) & (df[aspect1] == 0) & (df[aspect2] == 0)]
+    if error.size > 0:
+        print("Errors removed (not written to file)...")
 
 
 # run data extract
 def extract(raw_data, cfg_file):
     # get folder to store results of all phases
-    create_folder_is_not_exists(results_folder)
+    create_folder_if_not_exists(results_folder)
 
     # initialise by converting the raw data into the df
     source_data_df = convert_raw_data_to_df(raw_data)

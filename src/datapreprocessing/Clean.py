@@ -25,7 +25,7 @@
 import os
 import pandas as pd
 from pathlib import Path
-from datapreprocessing.Utils import create_folder_is_not_exists, output_fields, \
+from datapreprocessing.Utils import create_folder_if_not_exists, output_fields, \
     raw_output_folder, results_folder
 
 
@@ -50,7 +50,7 @@ def filter_phase_data():
             file_name = 'clean_' + file_name
 
             # ensure folder exists before creating the file
-            create_folder_is_not_exists(output_folder)
+            create_folder_if_not_exists(output_folder)
 
             # write output to a file
             df.to_csv(output_folder + file_name, sep=',')

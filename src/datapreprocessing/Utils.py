@@ -38,46 +38,21 @@ def convert_raw_data_to_df(raw_data):
     return source_data
 
 
-# get the current date/time in YYMMDD_HHMMSS format
-def get_current_datetime():
-    return time.strftime("%Y%m%d_%H%M%S")
-
-
 # create folder if it doesn't exist
-def create_folder_is_not_exists(folder):
+def create_folder_if_not_exists(folder):
     if not os.path.exists(folder):
         os.makedirs(folder, mode=0o777)
     else:
         pass
 
 
-# store desired fields as array
-def get_output_fields():
-    output_fields = ['Date', 'Time', 'Result', 'Phase']
-    return output_fields
-
-
 # adds date/time fields to the detector fields (for desired results)
 def get_detector_fields(cfg_file):
-    cfg_file = root_path + '/data/' + cfg_file
+    cfg_file = root_path + '/config/' + cfg_file
     detector_fields = get_io_list_from_config(cfg_file)
     detector_fields.insert(0, 'Date')
     detector_fields.insert(1, 'Time')
     return detector_fields
-
-
-# get the location of the (latest created) results folder
-def get_results_folder():
-    results_folder = root_path + '/results/' + current_dt + '/'
-    return results_folder
-
-#
-# # define and create raw output folder if it doesn't exist yet
-# def get_raw_output_folder():
-#     results_folder = get_results_folder()
-#     raw_output_folder = results_folder + 'phases/raw/'
-#     create_folder_is_not_exists(raw_output_folder)
-#     return raw_output_folder
 
 
 # get the list of I/O names and IDs via a config file
@@ -111,9 +86,9 @@ def get_io_list_from_config(file):
     return io_list
 
 # get current date and time
-current_dt = get_current_datetime()
+current_dt = time.strftime("%Y%m%d_%H%M%S")
 results_folder = root_path + '/results/' + current_dt + '/'
 
 # initialise raw folder
 raw_output_folder = results_folder + 'phases/raw/'
-create_folder_is_not_exists(raw_output_folder)
+create_folder_if_not_exists(raw_output_folder)
