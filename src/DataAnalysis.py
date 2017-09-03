@@ -24,13 +24,13 @@ Allows analysis to be run
 
 """
 
+import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 import seaborn as sns
-import numpy as np
-import matplotlib.pyplot as plt
 
 # declare data path
-data = '../results/20170813_114136/dataset.csv'
+data = '../results/20170829_115309/dataset.csv'
 
 # select fields that we want to use for DT
 fields = ['Date', 'Time', 'Result', 'Phase']
@@ -66,8 +66,8 @@ def prepare_data():
             df_output = pd.merge(df_output, df_result, on=['Date_Time'])
 
     # write result further to csv
-    df.to_csv('../results/20170813_114136/DA_dataset.csv', sep=',', index=False, header=False)
-    print("Prepared dataset available: ../results/20170813_114136/DT_dataset.csv")
+    df.to_csv('../results/20170829_115309/DA_dataset.csv', sep=',', index=False, header=False)
+    print("Prepared dataset available: ../results/20170829_115309/DA_dataset.csv")
 
     # return final data frame
     print(df_output)
@@ -76,7 +76,7 @@ def prepare_data():
 
 # analyse phase correlation
 def analyse_correlation(df):
-    pd.scatter_matrix(df, alpha=0.3, figsize=(14,8), diagonal='kde')
+    pd.scatter_matrix(df, alpha=0.3, figsize=(14, 8), diagonal='kde')
     f, ax = plt.subplots(figsize=(10, 8))
     corr = df.corr()
     sns.heatmap(corr, mask=np.zeros_like(corr, dtype=np.bool), cmap=sns.diverging_palette(220, 10, as_cmap=True),
@@ -123,7 +123,7 @@ def analyse_phase_subplots(df, seconds):
 
 # main function runs data analysis functions
 if __name__ == '__main__':
-    df = prepare_data()
+    # df = prepare_data()
     analyse_correlation(df)
     analyse_phase_vs_datetime(df, 120)
     analyse_phase_subplots(df, 120)

@@ -18,74 +18,70 @@
 Implements the CART algorithm for decision trees
 
 """
-import os
-
-import pandas as pd
-from sklearn.ensemble import RandomForestRegressor
-
+from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
+from sklearn.model_selection import GridSearchCV, TimeSeriesSplit, cross_val_score, cross_val_predict
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeRegressor, export_graphviz
-import matplotlib.pyplot as plt
-
-
-# returns the latest dataset location
-def get_latest_dataset_folder():
-    folder = '../results/'
-    latest_location = max([os.path.join(folder, d) for d in os.listdir(folder)])
-    return latest_location
-
-
-# returns the latest dataset
-def get_latest_dataset():
-    latest_folder = get_latest_dataset_folder()
-    file = latest_folder + '/sklearn_dataset.csv'
-    return file
-
-
-# get X and y for sklearn models, excluding date/time stamps
-def get_sklearn_data():
-    file = get_latest_dataset()
-    data = pd.read_csv(file, usecols=['Phase', 'Result', 'Duration'], sep=',')
-    X = data.drop('Duration', axis=1)
-    y = data.Duration
-    print("Dataset used: ", file)
-    return X, y
+from Tools_ML import get_latest_dataset_folder, get_latest_dataset, get_sklearn_data
+from sklearn.metrics import mean_squared_error
+import matplotlib.pyplot as plttrai
+import numpy as np
+from orangecontrib.timeseries import *
+import pandas as pd
 
 
 # implement CART
 def run_CART():
-    # declare X and y
-    X, y = get_sklearn_data()
+    training_data = get_latest_dataset()
 
     # split data into training / test (20% for test)
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1)
+    X, y = get_sklearn_data(training_data)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1, shuffle=False)
 
     # create decision tree model
-    dt_model = DecisionTreeRegressor(max_depth=4, presort=True)
-    # dt_model = RandomForestRegressor(n_estimators=1000, oob_score=True, random_state=1)
+    # dt_model = DecisionTreeRegressor(min_samples_leaf=3, max_depth=5)
+    dt_model = GradientBoostingRegressor(min_samples_leaf=3, max_depth=5, learning_rate=0.05)
+    rf_model = RandomForestRegressor(n_estimators=200, verbose=0, min_samples_leaf=3, max_depth=20)
 
-    # fit model using training data
+    # fit models using training data
     dt_model.fit(X_train, y_train)
-    dt_model.predict(X_test)
+    rf_model.fit(X_train, y_train)
 
     # expose to tree graphviz format for analysis
-    folder = get_latest_dataset_folder()
-    out_file_location = folder + "/dt_tree.dot"
-    export_graphviz(dt_model, out_file=out_file_location, feature_names=X_train.columns)
+    # folder = get_latest_dataset_folder()
+    # out_file_location = folder + "/dt_tree.dot"
+    # export_graphviz(dt_model, out_file=out_file_location, feature_names=X_train.columns)
 
     # predict on new (test) data and encapsulate result in data frame
-    y_prediction = dt_model.predict(X_test)
+    y_dt = dt_model.predict(X_test)
+    y_rf = rf_model.predict(X_test)
 
-    # get the coefficient of determination to measure how good the random forest model is
+    # get the score from the estimators
     score = dt_model.score(X_test, y_test)
-    print("Total score:", score)
+    mse = mean_squared_error(y_test, y_dt)
+    print("MSE (DT): %.4f" % mse)
+    print("Total score (DT):", score)
+
+    score2 = rf_model.score(X_test, y_test)
+    mse2 = mean_squared_error(y_test, y_rf)
+    print("MSE (RF): %.4f" % mse2)
+    print("Total score (RF):", score2)
+
+    # # find the best params
+    # param_grid = {'max_depth': [None, 5, 10, 15, 20],
+    #               'min_samples_leaf': [3, 5, 10, 20]
+    #               }
+    # gs_dt = GridSearchCV(dt_model, param_grid, n_jobs=4).fit(X_train, y_train)
+    # print("Best params (DT):", gs_dt.best_params_)
+
 
     # plot for visualisation
-    plt.scatter(y_prediction, y_test, label='Duration')
-    plt.plot([0, 1], [0, 1], '--k', transform=plt.gca().transAxes)
-    plt.xlabel('y_prediction')
-    plt.ylabel('y_test')
-    plt.show()
+    # plt.scatter(y_prediction, y_test, label='Duration')
+    # plt.plot([0, 1], [0, 1], '--k', transform=plt.gca().transAxes)
+    # plt.xlabel('y_prediction')
+    # plt.ylabel('y_test')
+    # plt.legend()
+    # plt.show()
 
 
 # main function runs data processing for decision trees
