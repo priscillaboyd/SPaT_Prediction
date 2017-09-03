@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f613a19-c67f-414e-8128-21c222c50d50" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/TestDPPUtils.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/DataPreProcessingTest.py" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DataAnalysis.py" afterPath="$PROJECT_DIR$/src/preprocessing/Analysis.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/datapreprocessing/Clean.py" afterPath="$PROJECT_DIR$/src/preprocessing/Clean.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/datapreprocessing/Extract.py" afterPath="$PROJECT_DIR$/src/preprocessing/Extract.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/datapreprocessing/ExtractSkLearn.py" afterPath="$PROJECT_DIR$/src/preprocessing/ExtractSkLearn.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/datapreprocessing/Main.py" afterPath="$PROJECT_DIR$/src/preprocessing/Main.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/datapreprocessing/Merge.py" afterPath="$PROJECT_DIR$/src/preprocessing/Merge.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/datapreprocessing/Utils.py" afterPath="$PROJECT_DIR$/src/preprocessing/Utils.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/datapreprocessing/__init__.py" afterPath="$PROJECT_DIR$/src/preprocessing/__init__.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/sample_data_small.csv" afterPath="$PROJECT_DIR$/data/sample_data_small.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/datapreprocessing/Clean.py" afterPath="$PROJECT_DIR$/src/datapreprocessing/Clean.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/datapreprocessing/Extract.py" afterPath="$PROJECT_DIR$/src/datapreprocessing/Extract.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/datapreprocessing/Utils.py" afterPath="$PROJECT_DIR$/src/datapreprocessing/Utils.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/TestDPPUtils.py" afterPath="$PROJECT_DIR$/test/TestDPPUtils.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,16 +26,28 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.475162">
+    <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="TestDPPUtils.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/test/TestDPPUtils.py">
+          <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/preprocessing/Main.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="15" column="35" lean-forward="false" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+                <state relative-caret-position="512">
+                  <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
                   <folding>
-                    <element signature="e#0#9#0" expanded="true" />
+                    <element signature="e#992#1039#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Analysis.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/preprocessing/Analysis.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="405">
+                  <caret line="120" column="0" lean-forward="true" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#1007#1038#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -41,72 +57,13 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/datapreprocessing/Main.py">
+          <file leaf-file-name="Utils.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/preprocessing/Utils.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="138">
-                  <caret line="19" column="33" lean-forward="false" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
-                  <folding>
-                    <element signature="e#993#1034#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Extract.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/datapreprocessing/Extract.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="265">
-                  <caret line="28" column="31" lean-forward="true" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Utils.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/datapreprocessing/Utils.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1275">
-                  <caret line="85" column="18" lean-forward="true" selection-start-line="85" selection-start-column="18" selection-end-line="85" selection-end-column="18" />
+                <state relative-caret-position="204">
+                  <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
                   <folding>
                     <element signature="e#793#802#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Clean.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/datapreprocessing/Clean.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="69">
-                  <caret line="13" column="24" lean-forward="false" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
-                  <folding>
-                    <element signature="e#987#996#0" expanded="true" />
-                    <element signature="e#2309#3169#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Merge.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/datapreprocessing/Merge.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="213">
-                  <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#801#820#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ExtractSkLearn.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/datapreprocessing/ExtractSkLearn.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-89">
-                  <caret line="33" column="64" lean-forward="false" selection-start-line="33" selection-start-column="64" selection-end-line="33" selection-end-column="64" />
-                  <folding>
-                    <element signature="e#933#952#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -126,12 +83,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>merged_phases</find>
-      <find>create_</find>
-      <find>get_result</find>
-      <find>results_folder</find>
-      <find>process_aspect_dfprocess_aspect_df</find>
-      <find>current_dt</find>
       <find>get_latest_dataset</find>
       <find>load_phase_data</find>
       <find>cfg_file</find>
@@ -156,6 +107,12 @@
       <find>get_detector_fields</find>
       <find>end_time</find>
       <find>get_current_datetime</find>
+      <find>prepare_data</find>
+      <find>data</find>
+      <find>last</find>
+      <find>results_folder</find>
+      <find>scatter_matrix</find>
+      <find>figure()</find>
     </findStrings>
     <replaceStrings>
       <replace>results_folder</replace>
@@ -177,9 +134,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/DataMerge_IO.py" />
-        <option value="$PROJECT_DIR$/DataMerge_Phase.py" />
-        <option value="$PROJECT_DIR$/gdz.py" />
         <option value="$PROJECT_DIR$/data_preprocessing/DataMerge_IO.py" />
         <option value="$PROJECT_DIR$/data_preprocessing/DataMerge_PhaseIO.py" />
         <option value="$PROJECT_DIR$/data_preprocessing/DataCleaning.py" />
@@ -228,6 +182,9 @@
         <option value="$PROJECT_DIR$/src/datapreprocessing/Utils.py" />
         <option value="$PROJECT_DIR$/test/TestDPPUtils.py" />
         <option value="$PROJECT_DIR$/test/TestDPPExtract.py" />
+        <option value="$PROJECT_DIR$/src/analysis/Main.py" />
+        <option value="$PROJECT_DIR$/src/preprocessing/Main.py" />
+        <option value="$PROJECT_DIR$/src/preprocessing/Analysis.py" />
       </list>
     </option>
   </component>
@@ -333,7 +290,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="datapreprocessing" />
+              <option name="myItemId" value="preprocessing" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -367,11 +324,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/preprocessing/" />
+      <recent name="$PROJECT_DIR$/src/" />
+      <recent name="$PROJECT_DIR$/src/dataanalysis" />
       <recent name="$PROJECT_DIR$/src/dataprocessing" />
       <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/src/DataProcessing" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/data_preprocessing" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -386,7 +343,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.Main (2)">
     <configuration default="false" name="DT_CART (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -400,42 +357,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="SPaT_Prediction" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/DT.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="RNN_LSTM" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="SPaT_Prediction" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/RNN_LSTM.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="DataPreProcessing (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/dataprocessing" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="SPaT_Prediction" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/dataprocessing/Main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -472,6 +393,42 @@
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;$PROJECT_DIR$/test/TestDPPUtils.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/analysis" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SPaT_Prediction" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/preprocessing/Analysis.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Main (2)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/preprocessing" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SPaT_Prediction" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/preprocessing/Main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
@@ -721,18 +678,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.DT_CART (1)" />
-      <item index="1" class="java.lang.String" itemvalue="Python.RNN_LSTM" />
-      <item index="2" class="java.lang.String" itemvalue="Python.DataPreProcessing (1)" />
-      <item index="3" class="java.lang.String" itemvalue="Python.Main" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in TestDPPUtils.py" />
+      <item index="1" class="java.lang.String" itemvalue="Python.Main" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in TestDPPUtils.py" />
+      <item index="3" class="java.lang.String" itemvalue="Python.Main (1)" />
+      <item index="4" class="java.lang.String" itemvalue="Python.Main (2)" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in TestDPPUtils.py" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Main" />
-        <item index="2" class="java.lang.String" itemvalue="Python.DT_CART (1)" />
-        <item index="3" class="java.lang.String" itemvalue="Python.DataPreProcessing (1)" />
-        <item index="4" class="java.lang.String" itemvalue="Python.RNN_LSTM" />
+        <item index="0" class="java.lang.String" itemvalue="Python.Main (2)" />
+        <item index="1" class="java.lang.String" itemvalue="Python.Main (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in TestDPPUtils.py" />
+        <item index="3" class="java.lang.String" itemvalue="Python.Main" />
+        <item index="4" class="java.lang.String" itemvalue="Python.DT_CART (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -887,7 +844,14 @@
       <option name="project" value="LOCAL" />
       <updated>1504438884641</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Fix to issue priscillaboyd/SPaT_Prediction#12">
+      <created>1504442080203</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1504442080203</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -935,13 +899,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44010767" sideWeight="0.13125" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29130435" sideWeight="0.86875" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2923913" sideWeight="0.86875" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2765625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1014,11 +978,12 @@
     <MESSAGE value="Fix to issue priscillaboyd/SPaT_Prediction#17" />
     <MESSAGE value="Refactoring to increase modularity with improvements such as removal of relative paths, module name changes, creation of a Utils module for re-usable functionality" />
     <MESSAGE value="Refactoring to remove duplicated features, improved comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring to remove duplicated features, improved comments" />
+    <MESSAGE value="Fix to issue priscillaboyd/SPaT_Prediction#12" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix to issue priscillaboyd/SPaT_Prediction#12" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="42" />
+      <option name="time" value="43" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1113,14 +1078,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1380">
           <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataAnalysis.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-61">
-          <caret line="27" column="21" lean-forward="false" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1266,7 +1223,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/datapreprocessing/__init__.py">
+    <entry file="file://$PROJECT_DIR$/src/preprocessing/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1274,24 +1231,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/datapreprocessing/Clean.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="13" column="24" lean-forward="false" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
-          <folding>
-            <element signature="e#987#996#0" expanded="true" />
-            <element signature="e#2309#3169#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/datapreprocessing/Merge.py">
+    <entry file="file://$PROJECT_DIR$/src/preprocessing/Merge.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
           <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <element signature="e#801#820#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1303,13 +1247,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/datapreprocessing/ExtractSkLearn.py">
+    <entry file="file://$PROJECT_DIR$/src/preprocessing/ExtractSkLearn.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-89">
           <caret line="33" column="64" lean-forward="false" selection-start-line="33" selection-start-column="64" selection-end-line="33" selection-end-column="64" />
-          <folding>
-            <element signature="e#933#952#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1317,34 +1259,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/datapreprocessing/Utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="85" column="18" lean-forward="true" selection-start-line="85" selection-start-column="18" selection-end-line="85" selection-end-column="18" />
-          <folding>
-            <element signature="e#793#802#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/datapreprocessing/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="19" column="33" lean-forward="false" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
-          <folding>
-            <element signature="e#993#1034#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/datapreprocessing/Extract.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="28" column="31" lean-forward="true" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -1361,8 +1275,54 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="35" lean-forward="false" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/preprocessing/Clean.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="13" column="24" lean-forward="false" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#2307#3167#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/preprocessing/Extract.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/preprocessing/Utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding>
+            <element signature="e#793#802#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/preprocessing/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding>
+            <element signature="e#992#1039#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/preprocessing/Analysis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="120" column="0" lean-forward="true" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+          <folding>
+            <element signature="e#1007#1038#0" expanded="true" />
           </folding>
         </state>
       </provider>

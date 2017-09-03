@@ -22,7 +22,7 @@
 """
 
 # extracts phase data from the data set
-from datapreprocessing.Utils import create_folder_if_not_exists, get_detector_fields, \
+from preprocessing.Utils import create_folder_if_not_exists, get_detector_fields, \
     convert_raw_data_to_df, results_folder, raw_output_folder
 
 

@@ -21,12 +21,12 @@
     - Adapt to be used with the scikit-learn framework
 
 """
-
-from datapreprocessing.Clean import clean
-from datapreprocessing.Extract import extract
-from datapreprocessing.ExtractSkLearn import sklearn_data_processing
-from datapreprocessing.Merge import data_merge
-from datapreprocessing.Utils import get_detector_fields
+from preprocessing.Analysis import run_analysis
+from preprocessing.Clean import clean
+from preprocessing.Extract import extract
+from preprocessing.ExtractSkLearn import sklearn_data_processing
+from preprocessing.Merge import data_merge
+from preprocessing.Utils import get_detector_fields
 
 raw_data = '30min.csv'
 cfg_file = 'e80374.8SD'
@@ -42,3 +42,6 @@ if __name__ == '__main__':
 
     # process merged data further to use with scikit-learn models
     sklearn_data_processing(merged_data)
+
+    # run data analysis and produce necessary graphs
+    run_analysis()

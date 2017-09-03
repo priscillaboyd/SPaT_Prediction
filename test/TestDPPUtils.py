@@ -1,8 +1,9 @@
 import os
 import shutil
 import unittest
+
 from Definitions import root
-from datapreprocessing.Utils import root_path, output_fields, create_folder_if_not_exists, results_folder, \
+from preprocessing.Utils import root_path, output_fields, create_folder_if_not_exists, results_folder, \
     raw_output_folder
 
 

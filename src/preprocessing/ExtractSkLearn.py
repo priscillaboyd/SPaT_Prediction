@@ -20,7 +20,8 @@
 
 """
 import pandas as pd
-from datapreprocessing.Utils import results_folder
+
+from preprocessing.Utils import results_folder
 
 
 # process data for scikit-learn

@@ -13,7 +13,7 @@
 # limitations under the License.
 # ==============================================================================
 
-"""The DataAnalysis class:
+"""The Analysis class:
 
 Prepares the data by:
 - Creating a CSV file with phase, result (red, red/amber, amber, green), record date/time
@@ -27,24 +27,23 @@ Allows analysis to be run
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+from pandas.plotting import scatter_matrix
 import seaborn as sns
 
-# declare data path
-data = '../results/20170829_115309/dataset.csv'
-
-# select fields that we want to use for DT
-fields = ['Date', 'Time', 'Result', 'Phase']
-
-# load data and order by phase
-phase_data = pd.read_csv(data, header=0, skipinitialspace=True, usecols=fields, parse_dates=[['Date', 'Time']])
-df = pd.DataFrame(phase_data)
+from preprocessing.Utils import output_fields, results_folder
 
 # load list of phases and states
 phase_list = ['A', 'B', 'C', 'D']
-state_list = ['3', '2', '1', '0']
+state_list = ['0', '1', '2', '3']
 
 
+# prepare data for data analysis
 def prepare_data():
+    # load data and order by phase
+    data = results_folder + 'dataset.csv'
+    phase_data = pd.read_csv(data, header=0, skipinitialspace=True, usecols=output_fields, parse_dates=[['Date', 'Time']])
+    df = pd.DataFrame(phase_data)
+
     # initialise for later usage
     df_output = pd.DataFrame()
 
@@ -66,17 +65,16 @@ def prepare_data():
             df_output = pd.merge(df_output, df_result, on=['Date_Time'])
 
     # write result further to csv
-    df.to_csv('../results/20170829_115309/DA_dataset.csv', sep=',', index=False, header=False)
-    print("Prepared dataset available: ../results/20170829_115309/DA_dataset.csv")
+    df.to_csv(results_folder + 'DA_dataset.csv', sep=',', index=False, header=False)
+    print('Prepared analysis data available:' + results_folder + 'DA_dataset.csv')
 
     # return final data frame
-    print(df_output)
     return df_output
 
 
 # analyse phase correlation
 def analyse_correlation(df):
-    pd.scatter_matrix(df, alpha=0.3, figsize=(14, 8), diagonal='kde')
+    pd.plotting.scatter_matrix(df, alpha=0.3, figsize=(14, 8), diagonal='kde')
     f, ax = plt.subplots(figsize=(10, 8))
     corr = df.corr()
     sns.heatmap(corr, mask=np.zeros_like(corr, dtype=np.bool), cmap=sns.diverging_palette(220, 10, as_cmap=True),
@@ -89,7 +87,6 @@ def analyse_phase_vs_datetime(df, seconds):
     labels = ['Red', 'Red + Amber', 'Amber', 'Green']
     x = [0, 1, 2, 3]
     df = df[:seconds]
-    plt.figure()
     df.set_index(['Date_Time'], inplace=True)
     df.plot()
     plt.locator_params(axis='x', nbins=10)
@@ -100,6 +97,7 @@ def analyse_phase_vs_datetime(df, seconds):
     plt.show()
 
 
+# plot subplots of phases
 def analyse_phase_subplots(df, seconds):
     labels = ['Red', 'Red/Amber', 'Amber', 'Green']
     df = df[:seconds]
@@ -121,9 +119,10 @@ def analyse_phase_subplots(df, seconds):
     plt.show()
 
 
-# main function runs data analysis functions
-if __name__ == '__main__':
-    # df = prepare_data()
+# run data analysis
+def run_analysis():
+    df = prepare_data()
     analyse_correlation(df)
     analyse_phase_vs_datetime(df, 120)
     analyse_phase_subplots(df, 120)
+
