@@ -19,12 +19,13 @@ import csv
 from keras.layers.core import Dense, Activation, Dropout
 from keras.layers.recurrent import LSTM
 from keras.models import Sequential
+from machine_learning.UtilsML import get_latest_dataset
 
-np.random.seed(1234)
+# np.random.seed(1234)
 
 
-# read CSV data and build test/training data
-def signal_phase_and_timing(data_path, sequence_length=50):
+# split data into test and training
+def split_test_training(data_path, sequence_length=50):
 
     # logic for loading the CSV, using 'result' (2nd) column as basis for prediction
     with open(data_path) as f:
@@ -68,7 +69,7 @@ def build_model():
     model.add(Dropout(0.2))
 
     # second hidden layer
-    model.add(LSTM(layers[2],return_sequences=False))
+    model.add(LSTM(layers[2], return_sequences=False))
     model.add(Dropout(0.2))
 
     # third hidden layer
@@ -83,14 +84,16 @@ def build_model():
 
 
 def run_RNN():
-
     # define model params
     num_epochs = 5
     sequence_length = 10
-    data_path = '../results/20170829_163021/dataset.csv'
+    data_path = get_latest_dataset()
 
     # grab train and test data from CSV
-    X_train, y_train, X_test, y_test = signal_phase_and_timing(data_path, sequence_length)
+    X_train, y_train, X_test, y_test = split_test_training(data_path, sequence_length)
+
+    print(X_train)
+
 
     # build model
     model = build_model()

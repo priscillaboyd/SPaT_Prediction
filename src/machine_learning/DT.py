@@ -22,12 +22,12 @@ from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
 from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split
 
-from machine_learning.Tools_ML import get_latest_dataset, get_sklearn_data
+from machine_learning.UtilsML import get_latest_sklearn_dataset, get_sklearn_data
 
 
 # implement CART
 def run_CART():
-    training_data = get_latest_dataset()
+    training_data = get_latest_sklearn_dataset()
 
     # split data into training / test (20% for test)
     X, y = get_sklearn_data(training_data)

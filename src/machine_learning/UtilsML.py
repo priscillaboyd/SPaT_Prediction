@@ -28,6 +28,7 @@ from Definitions import root
 # grab root path from project definitions
 root_path = root
 
+
 # returns the latest dataset location
 def get_latest_dataset_folder():
     folder = root + '/results/'
@@ -35,8 +36,16 @@ def get_latest_dataset_folder():
     return latest_location
 
 
-# returns the latest dataset
+# returns the latest generic dataset
 def get_latest_dataset():
+    latest_folder = get_latest_dataset_folder()
+    file = latest_folder + '/dataset.csv'
+    print(file)
+    return file
+
+
+# returns the latest sklearn dataset
+def get_latest_sklearn_dataset():
     latest_folder = get_latest_dataset_folder()
     file = latest_folder + '/sklearn_dataset.csv'
     print(file)
@@ -46,7 +55,6 @@ def get_latest_dataset():
 # get X and y for sklearn models, excluding date/time stamps
 def get_sklearn_data(file):
     data = pd.read_csv(file, usecols=['Phase', 'Result', 'Duration'], sep=',')
-    # data = pd.read_csv(file, sep=',')
     X = data.drop('Result', axis=1)
     y = data.Result
     print("Dataset used: ", file)
