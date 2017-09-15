@@ -21,13 +21,15 @@
     - Adapt to be used with the scikit-learn framework
 
 """
-from preprocessing.Analysis import run_analysis
-from preprocessing.Clean import clean
-from preprocessing.Extract import extract
-from preprocessing.ExtractSkLearn import sklearn_data_processing
-from preprocessing.Merge import data_merge
-from preprocessing.Utils import get_detector_fields
+from analysis.Analyser import run_analysis
+from preprocessing.Cleaner import clean
+from preprocessing.Extractor import extract
+from preprocessing.Merger import data_merge
+from preprocessing.SkLearnProcessor import sklearn_data_processing_with_duration, \
+    sklearn_data_processing_with_io, sklearn_data_processing_without_io
+from tools.Utils import get_detector_fields
 
+# raw_data = '20170903_24h_mixed.csv'
 raw_data = '30min.csv'
 cfg_file = 'e80374.8SD'
 
@@ -41,7 +43,6 @@ if __name__ == '__main__':
     merged_data = data_merge(detector_fields)
 
     # process merged data further to use with scikit-learn models
-    sklearn_data_processing(merged_data)
-
-    # run data analysis and produce necessary graphs
-    run_analysis()
+    sklearn_data_processing_without_io(merged_data)
+    sklearn_data_processing_with_io(merged_data)
+    sklearn_data_processing_with_duration(merged_data)

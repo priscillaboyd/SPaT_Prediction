@@ -85,10 +85,74 @@ def get_io_list_from_config(file):
 
     return io_list
 
+
+# returns the latest dataset location
+def get_latest_dataset_folder():
+    folder = root + '/results/'
+    latest_location = max([os.path.join(folder, d) for d in os.listdir(folder)])
+    return latest_location
+
+
+# returns the latest generic dataset
+def get_latest_dataset():
+    latest_folder = get_latest_dataset_folder()
+    file = latest_folder + '/dataset.csv'
+    print("Dataset used: ", file)
+    return file
+
+
+# returns the latest sklearn dataset (excluding i/o)
+def get_sklearn_data_with_duration():
+    latest_folder = get_latest_dataset_folder()
+    file = latest_folder + '/sklearn_dataset_with_duration.csv'
+    print(file)
+    return file
+
+
+# get data for sklearn models without i/o features
+def get_sklearn_data_without_io():
+    latest_folder = get_latest_dataset_folder()
+    file = latest_folder + '/sklearn_dataset_without_io.csv'
+    return file
+
+
+# get data for sklearn models with i/o features
+def get_sklearn_data_with_io():
+    latest_folder = get_latest_dataset_folder()
+    file = latest_folder + '/sklearn_dataset_with_io.csv'
+    return file
+
+
+# get X and y for sklearn models, excluding date/time stamps
+def get_sklearn_X_y(file, duration, datetime):
+    data = pd.read_csv(file, sep=',')
+
+    # if date/time  = false, then remove it
+    if not datetime:
+        # if duration time is included, then look for start/end times
+        if duration:
+            del data['End']
+            del data['Start']
+        else:
+            del data['Date']
+            del data['Time']
+
+    X = data.drop('Result', axis=1)
+    y = data.Result
+
+    print("Dataset used: ", file)
+    return X, y
+
+
+# get the number of records in a CSV file
+def print_number_records(file):
+    df = pd.read_csv(file, sep=',')
+    print("Total number of records: ", len(df))
+
+
 # get current date and time
 current_dt = time.strftime("%Y%m%d_%H%M%S")
 results_folder = root_path + '/results/' + current_dt + '/'
 
 # initialise raw folder
 raw_output_folder = results_folder + 'phases/raw/'
-create_folder_if_not_exists(raw_output_folder)

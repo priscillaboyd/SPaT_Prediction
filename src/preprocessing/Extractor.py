@@ -13,16 +13,16 @@
 # limitations under the License.
 # ==============================================================================
 
-"""The Extract class extracts the data by:
+"""The Extractor class extracts the data by:
 
     - Processing a traffic simulator file in the expected CSV format
-    - Outputs results for a phase state (i.e. red = 0, red/amber = 1, amber = 2 or green = 3) using aspect data
-    - Extracting the relevant detection data and saves it to a separate CSV file
+    - Outputting results for a phase state (i.e. red = 0, red/amber = 1, amber = 2 or green = 3) using aspect data
+    - Extracting the relevant detection data and saving it to a separate CSV file
 
 """
 
 # extracts phase data from the data set
-from preprocessing.Utils import create_folder_if_not_exists, get_detector_fields, \
+from tools.Utils import create_folder_if_not_exists, get_detector_fields, \
     convert_raw_data_to_df, results_folder, raw_output_folder
 
 
@@ -43,7 +43,7 @@ def extract_phase_data(phase_list, df):
         print("Phase " + phase + " extracted!")
 
 
-# extracts detection data from the data set
+# extracts detection data
 def extract_io_data(detector_fields, df):
     print("Loading I/O data...")
     # get data frame with relevant i/o fields
@@ -68,6 +68,9 @@ def create_aspect_df(phase, df):
 
 # process aspect data to infer red, red/amber, amber or green for a phase
 def process_aspect_df(phase, df):
+
+    create_folder_if_not_exists(raw_output_folder)
+
     aspect0 = 'Aspect 0 of Phase ' + phase + '  State'
     aspect1 = 'Aspect 1 of Phase ' + phase + '  State'
     aspect2 = 'Aspect 2 of Phase ' + phase + '  State'

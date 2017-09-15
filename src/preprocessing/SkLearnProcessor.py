@@ -20,30 +20,73 @@
 
 """
 import pandas as pd
+from tools.Utils import results_folder
 
-from preprocessing.Utils import results_folder
+# load list of phases and states (excluding phases E and F as they are pedestrian phases)
+phase_list = ['A', 'B', 'C', 'D']
+
+# list of subset columns to be used for sklearn
+subset_columns = ['Date', 'Time', 'Result', 'Phase']
 
 
-# process data for scikit-learn
-def sklearn_data_processing(merged_data):
+# loop through phases to create data frame
+def loop_through_phases(df):
+    # loop through phases
+    for x in range(len(phase_list)):
+        phase = phase_list[x]
 
-    print("Creating Scikit-Learn dataset...")
+        # convert phase ID to int (to cater for scikit-learn requirements)
+        phase_value = str(x)
 
-    # select fields that we want to use for data frame
-    fields = ['Date', 'Time', 'Result', 'Phase']
+        # create a df for phase first phase only and substitute to comply with sklearn requirements
+        df2 = df[df['Phase'] == phase]
+        df2.iloc[:, 3] = phase_value
 
-    # load data and parse date/time to a single Date_Time column
-    phase_data = pd.read_csv(merged_data, header=0, skipinitialspace=True, usecols=fields, parse_dates=[['Date', 'Time']])
+    return df2
+
+
+# process data for scikit-learn without i/o
+def sklearn_data_processing_without_io(merged_data):
+    print("Creating scikit-Learn dataset without I/O information...")
+    phase_data = pd.read_csv(merged_data, header=0, skipinitialspace=True)
     df = pd.DataFrame(phase_data)
 
-    # load list of phases and states (excluding phases E and F as they are pedestrian phases)
-    phase_list = ['A', 'B', 'C', 'D']
+    # get subset of columns (exclude i/o fields), then create df by going through pahses
+    df = df[subset_columns]
+    df2 = loop_through_phases(df)
+
+    # write result to csv
+    df2.to_csv(results_folder + 'sklearn_dataset_without_io.csv', sep=',', index=False, header=True, mode='a')
+    print("New scikit-learn dataset without i/o data available: " + results_folder + "sklearn_dataset_without_io.csv")
+
+
+# process data for scikit-learn with i/o
+def sklearn_data_processing_with_io(merged_data):
+    print("Creating scikit-Learn dataset with I/O information...")
+    phase_data = pd.read_csv(merged_data, header=0, skipinitialspace=True)
+    df = pd.DataFrame(phase_data)
+
+    df2 = loop_through_phases(df)
+
+    # write result to csv
+    df2.to_csv(results_folder + 'sklearn_dataset_with_io.csv', sep=',', index=False, header=True, mode='a')
+    print("New scikit-learn dataset with i/o data available: " + results_folder + "sklearn_dataset_io.csv")
+
+
+# process data for scikit-learn with aggregated duration information
+def sklearn_data_processing_with_duration(merged_data):
+    print("Creating scikit-learn dataset with duration information...")
+
+    # load data and parse date/time to a single Date_Time column
+    phase_data = pd.read_csv(merged_data, header=0, skipinitialspace=True, usecols=subset_columns,
+                             parse_dates=[['Date', 'Time']])
+    df = pd.DataFrame(phase_data)
 
     new_columns = ['Phase', 'Result', 'Start', 'End', 'Duration']
     df_new_columns = pd.DataFrame(columns=new_columns)
 
     # write file for the first time with header
-    df_new_columns.to_csv(results_folder + 'sklearn_dataset.csv', sep=',', index=False, mode='w')
+    df_new_columns.to_csv(results_folder + 'sklearn_dataset_with_duration.csv', sep=',', index=False, mode='w')
 
     # loop through phases
     for x in range(len(phase_list)):
@@ -85,8 +128,8 @@ def sklearn_data_processing(merged_data):
                 current_result = df2['Result'].values[i]
                 start_time = df2['Date_Time'].values[i]
 
-    # write result further to csv
-    df_new_columns.to_csv(results_folder + 'sklearn_dataset.csv', sep=',', index=False,
+    # write result to csv
+    df_new_columns.to_csv(results_folder + 'sklearn_dataset_with_duration.csv', sep=',', index=False,
                           header=False, mode='a')
 
-    print("Scikit-learn dataset available: " + results_folder + "sklearn_dataset.csv")
+    print("New scikit-learn dataset with duration available: " + results_folder + "sklearn_dataset_with_duration.csv")

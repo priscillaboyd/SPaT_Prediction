@@ -12,28 +12,32 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
+"""The RNN_LSTM class:
 
+    - Implements a recurrent neural network using LSTM.
+
+"""
+
+import csv
 import matplotlib.pyplot as plt
 import numpy as np
-import csv
 from keras.layers.core import Dense, Activation, Dropout
 from keras.layers.recurrent import LSTM
 from keras.models import Sequential
-from machine_learning.UtilsML import get_latest_dataset
+from tools.Utils import current_dt, get_latest_dataset_folder, get_latest_dataset
 
 # np.random.seed(1234)
 
 
-# split data into test and training
+# split data between test and training examples
 def split_test_training(data_path, sequence_length=50):
-
     # logic for loading the CSV, using 'result' (2nd) column as basis for prediction
     with open(data_path) as f:
-        data = csv.reader(f, delimiter=",")
-        next(data, None)
+        record = csv.reader(f, delimiter=",")
+        next(record, None)
         spat = []
         nb_of_values = 0
-        for line in data:
+        for line in record:
             spat.append(float(line[2]))
             nb_of_values += 1
 
@@ -83,17 +87,15 @@ def build_model():
     return model
 
 
-def run_RNN():
+def run_rnn(file):
     # define model params
-    num_epochs = 5
+    num_epochs = 1
     sequence_length = 10
-    data_path = get_latest_dataset()
 
     # grab train and test data from CSV
-    X_train, y_train, X_test, y_test = split_test_training(data_path, sequence_length)
+    X_train, y_train, X_test, y_test = split_test_training(file, sequence_length)
 
     print(X_train)
-
 
     # build model
     model = build_model()
@@ -114,12 +116,14 @@ def run_RNN():
     plt.plot(predict[:100])
     plt.show()
 
-    # save model to h5 file
-    model.save('model.h5')
+    # save model to h5 file (same folder as data)
+    model_location_folder = get_latest_dataset_folder()
+    model.save(model_location_folder + '/RNN_' + current_dt + '.h5')
 
     return model, y_test, predict
 
 
 # main function
 if __name__ == '__main__':
-    run_RNN()
+    data = get_latest_dataset()
+    run_rnn(data)

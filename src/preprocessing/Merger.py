@@ -13,15 +13,14 @@
 # limitations under the License.
 # ==============================================================================
 
-"""The Merge class combines the data by:
+"""The Merger class combines the data by:
 
-    - Merging all phase data and I/O detection data into a single file
+    - Merging all phase data and I/O detection data into a single data set CSV file
 
 """
 
 import pandas as pd
-
-from preprocessing.Utils import results_folder, output_fields
+from tools.Utils import results_folder, output_fields
 
 
 # combine all data into single file
