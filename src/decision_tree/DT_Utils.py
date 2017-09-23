@@ -34,22 +34,13 @@ def score_dt(model_name, model, X, y, y_actual, output_folder):
     model_score = model.score(X, y)
     mse = mean_squared_error(y, y_actual)
 
-    path = output_folder + '/models'
-    filename = path + '/scores.txt'
-
-    # initialise scores file
-    if os.path.exists(filename):
-        # append file if exists
-        append_write = 'a'
-    else:
-        # create file if doesn't exist
-        append_write = 'w'
-
     mse_score = model_name, "- Mean Squared Error:", mse
     accuracy = model_name, "- Accuracy score (%):", "{:.2%}".format(model_score)
 
     # write to file
-    with open(filename, append_write) as scores:
+    path = output_folder + '/models'
+    filename = path + '/score_ ' + model_name + '.txt'
+    with open(filename, 'w') as scores:
         print(mse_score, file=scores)
         print(accuracy, file=scores)
     scores.close()

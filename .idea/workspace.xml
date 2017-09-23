@@ -4,9 +4,7 @@
     <list default="true" id="9f613a19-c67f-414e-8128-21c222c50d50" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/sample_data_small.csv" afterPath="$PROJECT_DIR$/data/sample_data_small.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decision_tree/CART.py" afterPath="$PROJECT_DIR$/src/decision_tree/CART.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decision_tree/DT_Utils.py" afterPath="$PROJECT_DIR$/src/decision_tree/DT_Utils.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decision_tree/GBR.py" afterPath="$PROJECT_DIR$/src/decision_tree/GBR.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,8 +24,8 @@
           <file leaf-file-name="DT_Utils.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/decision_tree/DT_Utils.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="780">
-                  <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+                <state relative-caret-position="373">
+                  <caret line="43" column="37" lean-forward="true" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
                   <folding>
                     <element signature="e#804#813#0" expanded="true" />
                   </folding>
@@ -935,7 +933,14 @@
       <option name="project" value="LOCAL" />
       <updated>1506165846151</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Further improvements to saving scores to file.">
+      <created>1506167049155</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1506167049155</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1043,7 +1048,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Initial commit. Basic functionality for pre-processing emulated control data made available in this release." />
     <MESSAGE value="Added basic logic for RNN using LSTM, more static emulated data for testing." />
     <MESSAGE value="Fix to issue priscillaboyd/SPaT_prediction#3" />
     <MESSAGE value="This closes #6, closes #9, and closes priscillaboyd/SPaT_Prediction#11" />
@@ -1068,7 +1072,8 @@
     <MESSAGE value="Fix to issues priscillaboyd/SPaT_Prediction#7 and priscillaboyd/SPaT_Prediction#27" />
     <MESSAGE value="Created new Analysis package, refactoring to cater for different shapes of data to suit sklearn platform." />
     <MESSAGE value="Fixed issues priscillaboyd/SPaT_Prediction#26, priscillaboyd/SPaT_Prediction#28 and priscillaboyd/SPaT_Prediction#29" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed issues priscillaboyd/SPaT_Prediction#26, priscillaboyd/SPaT_Prediction#28 and priscillaboyd/SPaT_Prediction#29" />
+    <MESSAGE value="Further improvements to saving scores to file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Further improvements to saving scores to file." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1423,8 +1428,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/decision_tree/DT_Utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+        <state relative-caret-position="373">
+          <caret line="43" column="37" lean-forward="true" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
           <folding>
             <element signature="e#804#813#0" expanded="true" />
           </folding>
