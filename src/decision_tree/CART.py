@@ -47,7 +47,7 @@ def run_cart(X_train, X_test, y_train, y_test, output_folder):
     y_dt = cv_dt_model.predict(X_test)
 
     # get the score from the estimators
-    score_dt(model_name, cv_dt_model, X_test, y_test, y_dt)
+    score_dt(model_name, cv_dt_model, X_test, y_test, y_dt, output_folder)
 
     # plot decision tree
     plot_dt(model_name, y_dt, y_test, output_folder)

@@ -18,6 +18,7 @@
     -  Provides helper functions for DT algorithm implementation, model creation and analysis
 
 """
+import os
 import pickle
 from matplotlib import pyplot as plt
 from sklearn.metrics import mean_squared_error
@@ -27,13 +28,31 @@ from sklearn.metrics import mean_squared_error
 from tools.Utils import create_folder_if_not_exists
 
 
-def score_dt(model_name, model, X, y, y_actual):
+# noinspection PyTypeChecker
+def score_dt(model_name, model, X, y, y_actual, output_folder):
     print("Scoring model...")
     model_score = model.score(X, y)
     mse = mean_squared_error(y, y_actual)
-    print(model_name, "- Mean Squared Error:", mse)
-    print(model_name, "- Accuracy score (%):", "{:.2%}".format(model_score))
-    #TODO: Save score to file
+
+    path = output_folder + '/models'
+    filename = path + '/scores.txt'
+
+    # initialise scores file
+    if os.path.exists(filename):
+        # append file if exists
+        append_write = 'a'
+    else:
+        # create file if doesn't exist
+        append_write = 'w'
+
+    mse_score = model_name, "- Mean Squared Error:", mse
+    accuracy = model_name, "- Accuracy score (%):", "{:.2%}".format(model_score)
+
+    # write to file
+    with open(filename, append_write) as scores:
+        print(mse_score, file=scores)
+        print(accuracy, file=scores)
+    scores.close()
 
 
 # plot decision tree, y (test) vs y (actual)

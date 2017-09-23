@@ -2,20 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f613a19-c67f-414e-8128-21c222c50d50" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decision_tree/GBR.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decision_tree/Main.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decision_tree/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/neural_network/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/machine_learning/DT.py" afterPath="$PROJECT_DIR$/src/decision_tree/CART.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/machine_learning/RNN_LSTM.py" afterPath="$PROJECT_DIR$/src/neural_network/RNN_LSTM.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/machine_learning/__init__.py" afterPath="$PROJECT_DIR$/src/decision_tree/DT_Utils.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/sample_data_small.csv" afterPath="$PROJECT_DIR$/data/sample_data_small.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analysis/Analyser.py" afterPath="$PROJECT_DIR$/src/analysis/Analyser.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analysis/Main.py" afterPath="$PROJECT_DIR$/src/analysis/Main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/preprocessing/Main.py" afterPath="$PROJECT_DIR$/src/preprocessing/Main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/preprocessing/SkLearnProcessor.py" afterPath="$PROJECT_DIR$/src/preprocessing/SkLearnProcessor.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tools/Utils.py" afterPath="$PROJECT_DIR$/src/tools/Utils.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decision_tree/CART.py" afterPath="$PROJECT_DIR$/src/decision_tree/CART.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decision_tree/DT_Utils.py" afterPath="$PROJECT_DIR$/src/decision_tree/DT_Utils.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decision_tree/GBR.py" afterPath="$PROJECT_DIR$/src/decision_tree/GBR.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,23 +23,23 @@
     <splitter split-orientation="horizontal" split-proportion="0.47894102">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="DT_Utils.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="DT_Utils.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/decision_tree/DT_Utils.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-48">
-                  <caret line="34" column="39" lean-forward="false" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
+                <state relative-caret-position="780">
+                  <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
                   <folding>
-                    <element signature="e#804#817#0" expanded="true" />
+                    <element signature="e#804#813#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Main.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/decision_tree/Main.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="342">
-                  <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+                <state relative-caret-position="462">
+                  <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
                   <folding>
                     <element signature="e#803#855#0" expanded="true" />
                   </folding>
@@ -60,11 +51,11 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="CART.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="CART.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/decision_tree/CART.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="497">
-                  <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+                <state relative-caret-position="387">
+                  <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
                   <folding>
                     <element signature="e#876#924#0" expanded="true" />
                   </folding>
@@ -72,11 +63,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="GBR.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="GBR.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/decision_tree/GBR.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="413">
-                  <caret line="31" column="30" lean-forward="false" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+                <state relative-caret-position="450">
+                  <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
                   <folding>
                     <element signature="e#783#831#0" expanded="true" />
                   </folding>
@@ -98,7 +89,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>print_number_records</find>
       <find>0, 1, 2, 3</find>
       <find>A</find>
       <find>A, B,</find>
@@ -128,6 +118,7 @@
       <find>plot_dt</find>
       <find>plot</find>
       <find>b</find>
+      <find>output_folder</find>
     </findStrings>
     <replaceStrings>
       <replace>results_folder</replace>
@@ -196,10 +187,10 @@
         <option value="$PROJECT_DIR$/src/preprocessing/Main.py" />
         <option value="$PROJECT_DIR$/src/decision_tree/DT.py" />
         <option value="$PROJECT_DIR$/src/tools/Utils.py" />
-        <option value="$PROJECT_DIR$/src/decision_tree/GBR.py" />
-        <option value="$PROJECT_DIR$/src/decision_tree/CART.py" />
-        <option value="$PROJECT_DIR$/src/decision_tree/DT_Utils.py" />
         <option value="$PROJECT_DIR$/src/decision_tree/Main.py" />
+        <option value="$PROJECT_DIR$/src/decision_tree/CART.py" />
+        <option value="$PROJECT_DIR$/src/decision_tree/GBR.py" />
+        <option value="$PROJECT_DIR$/src/decision_tree/DT_Utils.py" />
       </list>
     </option>
   </component>
@@ -937,7 +928,14 @@
       <option name="project" value="LOCAL" />
       <updated>1505475105235</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Fixed issues priscillaboyd/SPaT_Prediction#26, priscillaboyd/SPaT_Prediction#28 and priscillaboyd/SPaT_Prediction#29">
+      <created>1506165846151</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1506165846151</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1069,7 +1067,8 @@
     <MESSAGE value="Fix to issues priscillaboyd/SPaT_Prediction#25" />
     <MESSAGE value="Fix to issues priscillaboyd/SPaT_Prediction#7 and priscillaboyd/SPaT_Prediction#27" />
     <MESSAGE value="Created new Analysis package, refactoring to cater for different shapes of data to suit sklearn platform." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created new Analysis package, refactoring to cater for different shapes of data to suit sklearn platform." />
+    <MESSAGE value="Fixed issues priscillaboyd/SPaT_Prediction#26, priscillaboyd/SPaT_Prediction#28 and priscillaboyd/SPaT_Prediction#29" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed issues priscillaboyd/SPaT_Prediction#26, priscillaboyd/SPaT_Prediction#28 and priscillaboyd/SPaT_Prediction#29" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1327,7 +1326,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding>
-            <element signature="e#1019#1061#0" expanded="true" />
+            <element signature="e#1019#1061#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1392,10 +1391,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/decision_tree/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding>
+            <element signature="e#803#855#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/decision_tree/CART.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding>
+            <element signature="e#876#924#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/decision_tree/GBR.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="31" column="30" lean-forward="false" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+        <state relative-caret-position="450">
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding>
             <element signature="e#783#831#0" expanded="true" />
           </folding>
@@ -1404,30 +1423,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/decision_tree/DT_Utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-48">
-          <caret line="34" column="39" lean-forward="false" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
+        <state relative-caret-position="780">
+          <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
           <folding>
-            <element signature="e#804#817#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/decision_tree/CART.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-          <folding>
-            <element signature="e#876#924#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/decision_tree/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding>
-            <element signature="e#803#855#0" expanded="true" />
+            <element signature="e#804#813#0" expanded="true" />
           </folding>
         </state>
       </provider>
