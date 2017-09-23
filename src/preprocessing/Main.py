@@ -21,7 +21,6 @@
     - Adapt to be used with the scikit-learn framework
 
 """
-from analysis.Analyser import run_analysis
 from preprocessing.Cleaner import clean
 from preprocessing.Extractor import extract
 from preprocessing.Merger import data_merge
@@ -29,8 +28,8 @@ from preprocessing.SkLearnProcessor import sklearn_data_processing_with_duration
     sklearn_data_processing_with_io, sklearn_data_processing_without_io
 from tools.Utils import get_detector_fields
 
-# raw_data = '20170903_24h_mixed.csv'
-raw_data = '30min.csv'
+raw_data = '20170903_24h_mixed.csv'
+# raw_data = '30min.csv'
 cfg_file = 'e80374.8SD'
 
 if __name__ == '__main__':

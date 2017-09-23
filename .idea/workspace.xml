@@ -2,24 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f613a19-c67f-414e-8128-21c222c50d50" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/analysis/Analyser.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/analysis/Extractor.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/analysis/Plotter.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/analysis/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tools/__init__.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/machine_learning/UtilsML.py" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/preprocessing/Analysis.py" afterPath="$PROJECT_DIR$/src/analysis/Main.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/preprocessing/Clean.py" afterPath="$PROJECT_DIR$/src/preprocessing/Cleaner.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/preprocessing/Extract.py" afterPath="$PROJECT_DIR$/src/preprocessing/Extractor.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/preprocessing/ExtractSkLearn.py" afterPath="$PROJECT_DIR$/src/preprocessing/SkLearnProcessor.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/preprocessing/Merge.py" afterPath="$PROJECT_DIR$/src/preprocessing/Merger.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/preprocessing/Utils.py" afterPath="$PROJECT_DIR$/src/tools/Utils.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/test/TestDPPUtils.py" afterPath="$PROJECT_DIR$/test/TestUtils.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decision_tree/GBR.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decision_tree/Main.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/decision_tree/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/neural_network/__init__.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/machine_learning/DT.py" afterPath="$PROJECT_DIR$/src/decision_tree/CART.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/machine_learning/RNN_LSTM.py" afterPath="$PROJECT_DIR$/src/neural_network/RNN_LSTM.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/machine_learning/__init__.py" afterPath="$PROJECT_DIR$/src/decision_tree/DT_Utils.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/sample_data_small.csv" afterPath="$PROJECT_DIR$/data/sample_data_small.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/machine_learning/DT.py" afterPath="$PROJECT_DIR$/src/machine_learning/DT.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/machine_learning/RNN_LSTM.py" afterPath="$PROJECT_DIR$/src/machine_learning/RNN_LSTM.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analysis/Analyser.py" afterPath="$PROJECT_DIR$/src/analysis/Analyser.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analysis/Main.py" afterPath="$PROJECT_DIR$/src/analysis/Main.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/preprocessing/Main.py" afterPath="$PROJECT_DIR$/src/preprocessing/Main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/preprocessing/SkLearnProcessor.py" afterPath="$PROJECT_DIR$/src/preprocessing/SkLearnProcessor.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tools/Utils.py" afterPath="$PROJECT_DIR$/src/tools/Utils.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,68 +29,64 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Utils.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/tools/Utils.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="33" column="37" lean-forward="true" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
-              <folding>
-                <element signature="e#793#802#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/analysis/Main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="30" column="27" lean-forward="true" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
-              <folding>
-                <element signature="e#1019#1061#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Analyser.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/analysis/Analyser.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-              <folding>
-                <element signature="e#850#904#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Extractor.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/analysis/Extractor.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-              <folding>
-                <element signature="e#824#843#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Plotter.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/analysis/Plotter.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="54" column="38" lean-forward="true" selection-start-line="54" selection-start-column="38" selection-end-line="54" selection-end-column="38" />
-              <folding>
-                <element signature="e#812#830#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.47894102">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="DT_Utils.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/decision_tree/DT_Utils.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-48">
+                  <caret line="34" column="39" lean-forward="false" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
+                  <folding>
+                    <element signature="e#804#817#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Main.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/decision_tree/Main.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="342">
+                  <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#803#855#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="CART.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/decision_tree/CART.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="497">
+                  <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#876#924#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="GBR.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/decision_tree/GBR.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="413">
+                  <caret line="31" column="30" lean-forward="false" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+                  <folding>
+                    <element signature="e#783#831#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -106,14 +98,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>figure()</find>
-      <find>sequence_length</find>
-      <find>output</find>
-      <find>root_path</find>
-      <find>raw_output</find>
-      <find>split_test_training</find>
-      <find>dt_model</find>
-      <find>y_rf</find>
       <find>print_number_records</find>
       <find>0, 1, 2, 3</find>
       <find>A</find>
@@ -136,6 +120,14 @@
       <find>state_list</find>
       <find>state-List</find>
       <find>create</find>
+      <find>3</find>
+      <find>loop_through</find>
+      <find>datetools</find>
+      <find>date</find>
+      <find>tools</find>
+      <find>plot_dt</find>
+      <find>plot</find>
+      <find>b</find>
     </findStrings>
     <replaceStrings>
       <replace>results_folder</replace>
@@ -157,11 +149,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/DataExtract.py" />
-        <option value="$PROJECT_DIR$/results/DataPreProcessing.py" />
-        <option value="$PROJECT_DIR$/DataMerge.py" />
-        <option value="$PROJECT_DIR$/DataPreProcessing.py" />
-        <option value="$PROJECT_DIR$/src/DT_CART.py" />
         <option value="$PROJECT_DIR$/src/FeatureSelection.java" />
         <option value="$PROJECT_DIR$/src/FeatureSelection.py" />
         <option value="$PROJECT_DIR$/src/DataAnalysis.py" />
@@ -195,19 +182,24 @@
         <option value="$PROJECT_DIR$/test/TestUtils.py" />
         <option value="$PROJECT_DIR$/src/machine_learning/RNN_LSTM.py" />
         <option value="$PROJECT_DIR$/src/preprocessing/ExtractSkLearn.py" />
-        <option value="$PROJECT_DIR$/src/machine_learning/DT.py" />
         <option value="$PROJECT_DIR$/src/preprocessing/Extract.py" />
         <option value="$PROJECT_DIR$/src/preprocessing/Extractor.py" />
         <option value="$PROJECT_DIR$/src/preprocessing/Merger.py" />
         <option value="$PROJECT_DIR$/src/preprocessing/Cleaner.py" />
-        <option value="$PROJECT_DIR$/src/preprocessing/SkLearnProcessor.py" />
         <option value="$PROJECT_DIR$/src/preprocessing/Analysis.py" />
-        <option value="$PROJECT_DIR$/src/preprocessing/Main.py" />
-        <option value="$PROJECT_DIR$/src/tools/Utils.py" />
         <option value="$PROJECT_DIR$/src/analysis/Extractor.py" />
+        <option value="$PROJECT_DIR$/src/analysis/Plotter.py" />
         <option value="$PROJECT_DIR$/src/analysis/Main.py" />
         <option value="$PROJECT_DIR$/src/analysis/Analyser.py" />
-        <option value="$PROJECT_DIR$/src/analysis/Plotter.py" />
+        <option value="$PROJECT_DIR$/src/preprocessing/SkLearnProcessor.py" />
+        <option value="$PROJECT_DIR$/src/machine_learning/DT.py" />
+        <option value="$PROJECT_DIR$/src/preprocessing/Main.py" />
+        <option value="$PROJECT_DIR$/src/decision_tree/DT.py" />
+        <option value="$PROJECT_DIR$/src/tools/Utils.py" />
+        <option value="$PROJECT_DIR$/src/decision_tree/GBR.py" />
+        <option value="$PROJECT_DIR$/src/decision_tree/CART.py" />
+        <option value="$PROJECT_DIR$/src/decision_tree/DT_Utils.py" />
+        <option value="$PROJECT_DIR$/src/decision_tree/Main.py" />
       </list>
     </option>
   </component>
@@ -259,6 +251,20 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="SPaT_Prediction">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -268,20 +274,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="SPaT_Prediction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SPaT_Prediction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SPaT_Prediction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -316,8 +308,22 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="preprocessing" />
+              <option name="myItemId" value="SPaT_Prediction" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SPaT_Prediction" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="neural_network" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -335,7 +341,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="machine_learning" />
+              <option name="myItemId" value="decision_tree" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -359,20 +365,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="SPaT_Prediction">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
@@ -387,11 +379,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/decision_tree_engine" />
       <recent name="$PROJECT_DIR$/src/analysis" />
       <recent name="$PROJECT_DIR$/src/tools" />
       <recent name="$PROJECT_DIR$/src/preprocessing" />
       <recent name="$PROJECT_DIR$/models" />
-      <recent name="$PROJECT_DIR$/src/machine_learning" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -406,22 +398,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Main (1)">
-    <configuration default="false" name="Unittests in TestUtils.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="SPaT_Prediction" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/test/TestUtils.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.Main">
     <configuration default="false" name="Main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -458,24 +435,6 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="RNN_LSTM" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/machine_learning" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="SPaT_Prediction" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/machine_learning/RNN_LSTM.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="DT" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -488,7 +447,43 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="SPaT_Prediction" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/machine_learning/DT.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/decision_tree_engine/DT.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="DT (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/decision_tree" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SPaT_Prediction" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/decision_tree/CART.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/decision_tree" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SPaT_Prediction" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/decision_tree/Main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -740,19 +735,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in TestUtils.py" />
-      <item index="1" class="java.lang.String" itemvalue="Python.Main (1)" />
-      <item index="2" class="java.lang.String" itemvalue="Python.Main (2)" />
-      <item index="3" class="java.lang.String" itemvalue="Python.RNN_LSTM" />
-      <item index="4" class="java.lang.String" itemvalue="Python.DT" />
+      <item index="0" class="java.lang.String" itemvalue="Python.Main (1)" />
+      <item index="1" class="java.lang.String" itemvalue="Python.Main (2)" />
+      <item index="2" class="java.lang.String" itemvalue="Python.DT" />
+      <item index="3" class="java.lang.String" itemvalue="Python.DT (1)" />
+      <item index="4" class="java.lang.String" itemvalue="Python.Main" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.Main (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Main (2)" />
+        <item index="0" class="java.lang.String" itemvalue="Python.Main" />
+        <item index="1" class="java.lang.String" itemvalue="Python.DT (1)" />
         <item index="2" class="java.lang.String" itemvalue="Python.DT" />
-        <item index="3" class="java.lang.String" itemvalue="Python.RNN_LSTM" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in TestUtils.py" />
+        <item index="3" class="java.lang.String" itemvalue="Python.Main (2)" />
+        <item index="4" class="java.lang.String" itemvalue="Python.Main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -935,7 +930,14 @@
       <option name="project" value="LOCAL" />
       <updated>1504535322104</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Created new Analysis package, refactoring to cater for different shapes of data to suit sklearn platform.">
+      <created>1505475105235</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1505475105235</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -982,19 +984,19 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44010767" sideWeight="0.13125" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2923913" sideWeight="0.86875" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31413043" sideWeight="0.86875" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.134375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25652173" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39973083" sideWeight="0.85625" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3989071" sideWeight="0.85625" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1066,11 +1068,12 @@
     <MESSAGE value="Fix to issues priscillaboyd/SPaT_Prediction#23 and priscillaboyd/SPaT_Prediction#24" />
     <MESSAGE value="Fix to issues priscillaboyd/SPaT_Prediction#25" />
     <MESSAGE value="Fix to issues priscillaboyd/SPaT_Prediction#7 and priscillaboyd/SPaT_Prediction#27" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix to issues priscillaboyd/SPaT_Prediction#7 and priscillaboyd/SPaT_Prediction#27" />
+    <MESSAGE value="Created new Analysis package, refactoring to cater for different shapes of data to suit sklearn platform." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created new Analysis package, refactoring to cater for different shapes of data to suit sklearn platform." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="52" />
+      <option name="time" value="59" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1079,29 +1082,11 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DataExtract.py" />
-    <entry file="file://$PROJECT_DIR$/DataCleaning.py" />
-    <entry file="file://$PROJECT_DIR$/DataMerge.py" />
-    <entry file="file://$PROJECT_DIR$/results/20170813_114136/dataset.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda/lib/python3.5/site-packages/matplotlib/axis.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="1319" column="0" lean-forward="false" selection-start-line="1319" selection-start-column="0" selection-end-line="1319" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/testdata_20170624_2.csv" />
     <entry file="file://$USER_HOME$/anaconda/lib/python3.5/site-packages/pandas/core/generic.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="2743" column="0" lean-forward="false" selection-start-line="2743" selection-start-column="0" selection-end-line="2743" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1136,13 +1121,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FeatureSelection.py" />
-    <entry file="file://$USER_HOME$/anaconda/lib/python3.5/site-packages/sklearn/tree/export.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5730">
-          <caret line="391" column="0" lean-forward="false" selection-start-line="391" selection-start-column="0" selection-end-line="391" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/anaconda/lib/python3.5/site-packages/Orange/data/domain.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1380">
@@ -1168,7 +1146,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="1957" column="0" lean-forward="false" selection-start-line="1957" selection-start-column="0" selection-end-line="1957" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1225,7 +1202,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="1604" column="0" lean-forward="false" selection-start-line="1604" selection-start-column="0" selection-end-line="1604" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1233,7 +1209,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="21" lean-forward="true" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1241,7 +1216,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1279,9 +1253,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1299,30 +1270,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/anaconda/lib/python3.5/site-packages/sklearn/utils/validation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="541" column="0" lean-forward="false" selection-start-line="541" selection-start-column="0" selection-end-line="541" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/machine_learning/DT.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="31" column="40" lean-forward="false" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
-          <folding>
-            <element signature="e#760#837#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/preprocessing/Merger.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="46" lean-forward="true" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
-          <folding>
-            <element signature="e#815#834#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1330,33 +1281,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-583">
           <caret line="25" column="24" lean-forward="false" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/machine_learning/RNN_LSTM.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="64" column="18" lean-forward="false" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/preprocessing/SkLearnProcessor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="688">
-          <caret line="75" column="11" lean-forward="false" selection-start-line="75" selection-start-column="11" selection-end-line="75" selection-end-column="11" />
-          <folding>
-            <element signature="e#933#952#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/preprocessing/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1364,56 +1288,146 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="491">
           <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/neural_network/RNN_LSTM.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="64" column="18" lean-forward="false" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/analysis/Extractor.py">
+    <entry file="file://$USER_HOME$/anaconda/lib/python3.5/site-packages/statsmodels/compat/pandas.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding>
-            <element signature="e#824#843#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="493">
+          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/analysis/Plotter.py">
+    <entry file="file://$PROJECT_DIR$/src/analysis/Analyser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="54" column="38" lean-forward="true" selection-start-line="54" selection-start-column="38" selection-end-line="54" selection-end-column="38" />
-          <folding>
-            <element signature="e#812#830#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="19">
+          <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/preprocessing/SkLearnProcessor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/analysis/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="30" column="27" lean-forward="true" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding>
             <element signature="e#1019#1061#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/analysis/Analyser.py">
+    <entry file="file://$USER_HOME$/anaconda/lib/python3.5/site-packages/sklearn/tree/tree.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="206">
+          <caret line="1123" column="0" lean-forward="false" selection-start-line="1123" selection-start-column="0" selection-end-line="1123" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda/lib/python3.5/site-packages/sklearn/tree/export.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="391" column="0" lean-forward="false" selection-start-line="391" selection-start-column="0" selection-end-line="391" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda/lib/python3.5/site-packages/sklearn/utils/validation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="736" column="0" lean-forward="false" selection-start-line="736" selection-start-column="0" selection-end-line="736" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/analysis/Extractor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="832">
+          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
           <folding>
-            <element signature="e#850#904#0" expanded="true" />
+            <element signature="e#824#843#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/analysis/Plotter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="61" column="4" lean-forward="false" selection-start-line="61" selection-start-column="4" selection-end-line="61" selection-end-column="52" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tools/Utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="33" column="37" lean-forward="true" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
+        <state relative-caret-position="-48">
+          <caret line="133" column="0" lean-forward="true" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
           <folding>
             <element signature="e#793#802#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/preprocessing/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="46" column="54" lean-forward="true" selection-start-line="46" selection-start-column="54" selection-end-line="46" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/decision_tree/GBR.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="31" column="30" lean-forward="false" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+          <folding>
+            <element signature="e#783#831#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/decision_tree/DT_Utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-48">
+          <caret line="34" column="39" lean-forward="false" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
+          <folding>
+            <element signature="e#804#817#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/decision_tree/CART.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding>
+            <element signature="e#876#924#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/decision_tree/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding>
+            <element signature="e#803#855#0" expanded="true" />
           </folding>
         </state>
       </provider>

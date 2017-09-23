@@ -127,12 +127,23 @@ def get_sklearn_data_with_io():
 def get_sklearn_X_y(file, duration, datetime):
     data = pd.read_csv(file, sep=',')
 
-    # if date/time  = false, then remove it
-    if not datetime:
-        # if duration time is included, then look for start/end times
-        if duration:
-            del data['End']
-            del data['Start']
+    # if duration, remove 'end' and 'start' as not useful features for learning
+    if duration:
+        del data['End']
+        del data['Start']
+
+        if datetime:
+            raise Exception('Datetime and Duration are not compatible features! Please choose one only.')
+
+    else:
+        # if date/time  = false, then remove it
+        if datetime:
+            # transform date into one-hot encoded features
+            one_hot_encoded_date = pd.get_dummies(data['Date'])
+            data = data.drop('Date', axis=1)
+            data = data.join(one_hot_encoded_date)
+            data = data.drop('Time', axis=1)
+
         else:
             del data['Date']
             del data['Time']

@@ -43,7 +43,7 @@ def run_analysis(dataset, phase_list):
     # prepare data for analysis
     df = create_analysis_dataset(dataset, phase_list, analysis_folder)
 
-    # # perform correlation analysis and plot graphs
+    # # perform correlation analysis and plot graphs for 5 min
     plot_correlation(df, analysis_folder)
-    plot_phase_vs_dt(df, 120, analysis_folder)
-    plot_phases_info(df, 120, analysis_folder)
+    plot_phase_vs_dt(df, 300, analysis_folder)
+    plot_phases_info(df, 300, analysis_folder)

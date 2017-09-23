@@ -29,22 +29,6 @@ phase_list = ['A', 'B', 'C', 'D']
 subset_columns = ['Date', 'Time', 'Result', 'Phase']
 
 
-# loop through phases to create data frame
-def loop_through_phases(df):
-    # loop through phases
-    for x in range(len(phase_list)):
-        phase = phase_list[x]
-
-        # convert phase ID to int (to cater for scikit-learn requirements)
-        phase_value = str(x)
-
-        # create a df for phase first phase only and substitute to comply with sklearn requirements
-        df2 = df[df['Phase'] == phase]
-        df2.iloc[:, 3] = phase_value
-
-    return df2
-
-
 # process data for scikit-learn without i/o
 def sklearn_data_processing_without_io(merged_data):
     print("Creating scikit-Learn dataset without I/O information...")
@@ -53,10 +37,10 @@ def sklearn_data_processing_without_io(merged_data):
 
     # get subset of columns (exclude i/o fields), then create df by going through pahses
     df = df[subset_columns]
-    df2 = loop_through_phases(df)
+    df.Phase = pd.Categorical(df.Phase).codes
 
     # write result to csv
-    df2.to_csv(results_folder + 'sklearn_dataset_without_io.csv', sep=',', index=False, header=True, mode='a')
+    df.to_csv(results_folder + 'sklearn_dataset_without_io.csv', sep=',', index=False, header=True, mode='a')
     print("New scikit-learn dataset without i/o data available: " + results_folder + "sklearn_dataset_without_io.csv")
 
 
@@ -65,11 +49,10 @@ def sklearn_data_processing_with_io(merged_data):
     print("Creating scikit-Learn dataset with I/O information...")
     phase_data = pd.read_csv(merged_data, header=0, skipinitialspace=True)
     df = pd.DataFrame(phase_data)
-
-    df2 = loop_through_phases(df)
+    df.Phase = pd.Categorical(df.Phase).codes
 
     # write result to csv
-    df2.to_csv(results_folder + 'sklearn_dataset_with_io.csv', sep=',', index=False, header=True, mode='a')
+    df.to_csv(results_folder + 'sklearn_dataset_with_io.csv', sep=',', index=False, header=True, mode='a')
     print("New scikit-learn dataset with i/o data available: " + results_folder + "sklearn_dataset_io.csv")
 
 
@@ -111,9 +94,12 @@ def sklearn_data_processing_with_duration(merged_data):
                 df_start = pd.to_datetime(start_time)
                 df_end = pd.to_datetime(end_time)
 
-                # # start > end will happen if only 1 second record, so set duration = 1
+                # if start > end happens and result = 0, duration = 0
                 if df_start > df_end:
-                    duration = 1
+                    if df2['Result'].values[i] == 0:
+                        duration = 0
+                    else:
+                        duration = 1
                 else:
                     duration = pd.Timedelta(df_end - df_start).seconds
 

@@ -33,7 +33,6 @@ data = get_latest_dataset()
 # load list of phases and states to run analysis against
 phase_list = ['A', 'B', 'C', 'D']
 
-
 if __name__ == '__main__':
     # run data analysis and produce necessary graphs
     run_analysis(data, phase_list)
