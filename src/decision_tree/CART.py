@@ -40,6 +40,9 @@ def run_cart(X_train, X_test, y_train, y_test, output_folder):
                   }
     cv_dt_model = GridSearchCV(dt_model, param_grid, n_jobs=4).fit(X_train, y_train)
 
+    # print the CART model chosen by CV
+    print(cv_dt_model)
+
     # fit models using training data
     cv_dt_model.fit(X_train, y_train)
 
@@ -48,9 +51,6 @@ def run_cart(X_train, X_test, y_train, y_test, output_folder):
 
     # get the score from the estimators
     score_dt(model_name, cv_dt_model, X_test, y_test, y_dt, output_folder)
-
-    # plot decision tree
-    plot_dt(model_name, y_dt, y_test, output_folder)
 
     # save (pickle) model for re-use
     save_dt_model(model_name, cv_dt_model, output_folder)

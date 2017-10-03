@@ -30,7 +30,7 @@ from tools.Utils import current_dt, get_latest_dataset_folder, get_latest_datase
 
 
 # split data between test and training examples
-def split_test_training(data_path, sequence_length=50):
+def split_test_training(data_path, sequence_length):
     # logic for loading the CSV, using 'result' (2nd) column as basis for prediction
     with open(data_path) as f:
         record = csv.reader(f, delimiter=",")
@@ -41,7 +41,7 @@ def split_test_training(data_path, sequence_length=50):
             spat.append(float(line[2]))
             nb_of_values += 1
 
-    # break file into chunks
+    # break file into chunks based on sequence length
     result = []
     for index in range(len(spat) - sequence_length):
         result.append(spat[index: index + sequence_length])
@@ -68,7 +68,7 @@ def build_model():
     # declare the sizes of the layers (1d input and output)
     layers = [1, 50, 100, 1]
 
-    # first hidden layer
+    # first hidden layer, using linear activation (not specified)
     model.add(LSTM(layers[1], input_shape=(None, layers[0]), return_sequences=True))
     model.add(Dropout(0.2))
 
@@ -81,7 +81,7 @@ def build_model():
     model.add(Activation("linear"))
 
     # compile using MSE as loss function for regression, RMSPROP as optimiser
-    model.compile(loss="mse", optimizer="rmsprop", metrics=['accuracy'])
+    model.compile(loss="mse", optimizer="RMSProp", metrics=['accuracy'])
 
     # return the model
     return model
@@ -89,8 +89,8 @@ def build_model():
 
 def run_rnn(file):
     # define model params
-    num_epochs = 1
-    sequence_length = 10
+    num_epochs = 2
+    sequence_length = 20
 
     # grab train and test data from CSV
     X_train, y_train, X_test, y_test = split_test_training(file, sequence_length)
@@ -99,31 +99,18 @@ def run_rnn(file):
 
     # build model
     model = build_model()
-    model.fit(X_train, y_train, epochs=num_epochs, batch_size=16, validation_split=0.2)
+    model.fit(X_train, y_train, epochs=num_epochs, batch_size=64, validation_split=0.2)
 
     # predict
     predict = model.predict(X_test)
-    predict = np.reshape(predict, (predict.size,))
+    predict = np.reshape(predict, predict.size)
 
     # evaluate
     score = model.evaluate(X_test, y_test, verbose=0)
     print("Accuracy: ", score[1]*100, "%")
-
-    # plot
-    fig = plt.figure()
-    ax = fig.add_subplot(111)
-    ax.plot(y_test[:100])
-    plt.plot(predict[:100])
-    plt.show()
 
     # save model to h5 file (same folder as data)
     model_location_folder = get_latest_dataset_folder()
     model.save(model_location_folder + '/RNN_' + current_dt + '.h5')
 
     return model, y_test, predict
-
-
-# main function
-if __name__ == '__main__':
-    data = get_latest_dataset()
-    run_rnn(data)

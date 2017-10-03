@@ -39,11 +39,14 @@ def score_dt(model_name, model, X, y, y_actual, output_folder):
 
     # write to file
     path = output_folder + '/models'
-    filename = path + '/score_ ' + model_name + '.txt'
+    create_folder_if_not_exists(path)
+
+    filename = path + '/score_' + model_name + '.txt'
     with open(filename, 'w') as scores:
         print(mse_score, file=scores)
         print(accuracy, file=scores)
     scores.close()
+    print("Scores saved location:", filename)
 
 
 # plot decision tree, y (test) vs y (actual)
@@ -51,7 +54,6 @@ def plot_dt(model_name, y_actual, y_test, output_folder):
 
     # initialise plot path
     path = output_folder + '/models'
-    create_folder_if_not_exists(path)
 
     print("Plotting results...")
     plt.scatter(y_actual, y_test, label='Duration')
@@ -60,10 +62,9 @@ def plot_dt(model_name, y_actual, y_test, output_folder):
     plt.xlabel('y (actual)')
     plt.ylabel('y (test)')
     plt.legend()
-    # plt.show()
     plot_path = path + '/plot_' + model_name + '.png'
     plt.savefig(plot_path)
-    print("Plot saved location: ", plot_path)
+    print("Plot saved location:", plot_path)
 
 
 # save model using pickle format
@@ -72,7 +73,7 @@ def save_dt_model(model_name, model, folder):
     model_file = folder + '/models/' + model_name + '.pkl'
     path = open(model_file, 'wb')
     pickle.dump(model, path)
-    print("Model saved location: ", model_file)
+    print("Model saved location:", model_file)
 
 
 # retrieve model in pickle format

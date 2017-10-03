@@ -20,19 +20,18 @@
     - Runs the decision tree model
 
 """
+
 from sklearn.model_selection import train_test_split
 from decision_tree.CART import run_cart
 from decision_tree.GBR import run_gbr
 from tools.Utils import get_sklearn_data_with_duration, get_latest_dataset_folder, get_sklearn_X_y
 
 # retrieve data
-# data = get_sklearn_data_without_io()
-# data = get_sklearn_data_with_io()
 data = get_sklearn_data_with_duration()
 X, y = get_sklearn_X_y(data, duration=True, datetime=False)
 
 # split data into training / test (20% for test)
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1, shuffle=True)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1, shuffle=False)
 
 # define output folder for results
 output_folder = get_latest_dataset_folder()
