@@ -47,4 +47,4 @@ The following versions (or newer) are required to run SPaT Prediction:
 
 ## License
 
-This project is licensed under the Apache Licence 2.0 - see the [LICENSE.md](LICENSE.md) file for further information
+This project is licensed under the Apache Licence 2.0 - see the [LICENSE](LICENSE) file for further information
