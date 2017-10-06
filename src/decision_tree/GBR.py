@@ -13,19 +13,25 @@
 # limitations under the License.
 # ==============================================================================
 
-"""The GBR class:
-
-    - Implements the Gradient Boosted Regressor ensemble for decision trees
-
+"""
+    The GBR module implements the Gradient Boosting Regression ensemble for decision trees.
 """
 
 from sklearn.model_selection import GridSearchCV
 from sklearn.ensemble import GradientBoostingRegressor
-from decision_tree.DT_Utils import score_dt, plot_dt, save_dt_model
+from decision_tree.DT_Utils import score_dt, save_dt_model
 
 
-# run Gradient Boosting Regressor ensemble algorithm for decision trees
 def run_gbr(X_train, X_test, y_train, y_test, output_folder):
+    """
+    Run the Gradient Boosting Regression ensemble algorithm.
+
+    :param string X_train: training examples
+    :param string X_test: test examples
+    :param dataframe y_train: target training examples
+    :param dataframe y_test: target test examples
+    :param output_folder: location of the output / results
+    """
 
     # initialise model
     gbr_model = GradientBoostingRegressor()

@@ -2,15 +2,10 @@ import os
 import shutil
 import unittest
 
-from Definitions import root
-from tools.Utils import root_path, output_fields, create_folder_if_not_exists, results_folder, \
-    raw_output_folder
+from tools.Utils import root_path, output_fields, create_folder_if_not_exists, results_folder
 
 
 class TestUtils(unittest.TestCase):
-
-    def test_root_path_matches_project_structure(self):
-        self.assertEqual(root, root_path)
 
     def test_output_fields(self):
         output_fields_needed = ['Date', 'Time', 'Result', 'Phase']
@@ -30,14 +25,12 @@ class TestUtils(unittest.TestCase):
         self.assertEqual(os.path.exists(folder), False)
 
     def test_results_folder_exists(self):
+        create_folder_if_not_exists(results_folder)
         self.assertEqual(os.path.exists(results_folder), True)
 
         # remove folder after test
         shutil.rmtree(results_folder)
         self.assertEqual(os.path.exists(results_folder), False)
-
-    def test_raw_output_folder_exists(self):
-        self.assertEqual(os.path.exists(raw_output_folder), True)
 
 
 if __name__ == "__main__":

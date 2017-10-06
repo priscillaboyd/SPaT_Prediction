@@ -13,12 +13,8 @@
 # limitations under the License.
 # ==============================================================================
 
-"""The Main class:
-
-    - Creates decision tree model
-    - Initialises the data
-    - Runs the decision tree model
-
+"""
+    The Main module creates the decision tree models, initialises the data and runs them to obtain the scores.
 """
 
 from sklearn.model_selection import train_test_split

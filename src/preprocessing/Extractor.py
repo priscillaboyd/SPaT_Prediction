@@ -13,75 +13,109 @@
 # limitations under the License.
 # ==============================================================================
 
-"""The Extractor class extracts the data by:
+"""The Extractor module extracts the data by:
 
-    - Processing a traffic simulator file in the expected CSV format
-    - Outputting results for a phase state (i.e. red = 0, red/amber = 1, amber = 2 or green = 3) using aspect data
-    - Extracting the relevant detection data and saving it to a separate CSV file
+    - Processing a traffic simulator file in the expected CSV format.
+    - Outputting results for a phase state (i.e. red = 0, red/amber = 1, amber = 2 or green = 3) using aspect I/O data.
+    - Extracting the relevant detection data and saving it to a separate CSV file.
 
 """
 
-# extracts phase data from the data set
-from tools.Utils import create_folder_if_not_exists, get_detector_fields, \
-    convert_raw_data_to_df, results_folder, raw_output_folder
+from tools.Utils import create_folder_if_not_exists, get_detector_fields, convert_raw_data_to_df, results_folder, \
+    raw_output_folder
 
 
-# ensure SUP values are removed
 def remove_sup_values(raw_data):
+    """
+    Ensure non-relevant (SUP) dummy values, which are generated on system startup, are removed.
+
+    :param dataframe raw_data: raw CSV data
+    :return: raw data excluding SUP values
+    :rtype: dataframe
+    """
+
     raw_data = raw_data[~raw_data['Mode Stream 0'].isin(['8 - SUP '])]
     return raw_data
 
 
-# extract phase data using phase list and data frame
-def extract_phase_data(phase_list, df):
-    print("Loading phase data...")
-    # iterate over phases to get stats
-    for i in range(len(phase_list)):
-        phase = phase_list[i]
-        df_phase = create_aspect_df(phase, df)
-        process_aspect_df(phase, df_phase)
-        print("Phase " + phase + " extracted!")
+def extract_phase_data(stage_list, df):
+    """
+    Extract stage data using stage list and given data frame.
+
+    :param list[str] stage_list: list of stage names (e.g. ['A', 'B'])
+    :param dataframe df: CSV-formatted data
+    """
+
+    print("Loading stage data...")
+
+    # iterate over stages to get stats
+    for i in range(len(stage_list)):
+        stage = stage_list[i]
+        df_phase = create_aspect_df(stage, df)
+        process_aspect_df(stage, df_phase)
+        print("Phases for stage " + stage + " extracted!")
 
 
-# extracts detection data
 def extract_io_data(detector_fields, df):
+    """
+    Extract detection I/O data from a given data frame using pre-defined detector names.
+
+    :param list[str] detector_fields: list containing strings associated to the names of each detector
+    :param dataframe df: CSV-formatted data with I/O states
+    """
     print("Loading I/O data...")
-    # get data frame with relevant i/o fields
+
+    # get data frame with relevant I/O fields
     io_df = df[detector_fields]
     io_output_folder = results_folder + 'io/'
     create_folder_if_not_exists(io_output_folder)
 
-    # process results
+    # process results to file
     io_output_filename = 'io_' + 'out.csv'
     io_df.to_csv(io_output_folder + io_output_filename, sep=',')
+
     print("I/O data extracted!")
 
 
-# create initial data frame for a given phase with aspect data
-def create_aspect_df(phase, df):
-    phase_fields = ['Date', 'Time', 'Aspect 0 of Phase ' + phase + '  State',
-                    'Aspect 1 of Phase ' + phase + '  State',
-                    'Aspect 2 of Phase ' + phase + '  State']
+def create_aspect_df(stage, df):
+    """
+    Create initial data frame for a given stage using aspect I/O data.
+
+    :param string stage: Name of stage
+    :param dataframe df: CSV-formatted data with I/O aspect states
+    :return: Data frame for grouped aspect I/O data
+    :rtype: dataframe
+    """
+    phase_fields = ['Date', 'Time', 'Aspect 0 of Phase ' + stage + '  State',
+                    'Aspect 1 of Phase ' + stage + '  State',
+                    'Aspect 2 of Phase ' + stage + '  State']
     aspect_df = df[phase_fields]
     return aspect_df
 
 
-# process aspect data to infer red, red/amber, amber or green for a phase
-def process_aspect_df(phase, df):
+def process_aspect_df(stage, df):
+    """
+    Process aspect I/O data to infer red, red/amber, amber or green phase for a given stage
 
+    :param string stage: Name of stage
+    :param dataframe df: CSV-formatted data with grouped aspect I/O data
+    """
+
+    # create folder if it does not exist to store the outputs
     create_folder_if_not_exists(raw_output_folder)
 
-    aspect0 = 'Aspect 0 of Phase ' + phase + '  State'
-    aspect1 = 'Aspect 1 of Phase ' + phase + '  State'
-    aspect2 = 'Aspect 2 of Phase ' + phase + '  State'
+    # declare aspect variables for re-usability
+    aspect0 = 'Aspect 0 of Phase ' + stage + '  State'
+    aspect1 = 'Aspect 1 of Phase ' + stage + '  State'
+    aspect2 = 'Aspect 2 of Phase ' + stage + '  State'
 
     # process red results
     red = df[(df[aspect0] == 1) &
              (df[aspect1] == 0) &
              (df[aspect2] == 0)]
     red['Result'] = '0'
-    red['Phase'] = phase
-    red_output_filename = phase + '_' + 'red_result_out.csv'
+    red['Phase'] = stage
+    red_output_filename = stage + '_' + 'red_result_out.csv'
     red.to_csv(raw_output_folder + red_output_filename, sep=',')
 
     # process red/amber results
@@ -89,8 +123,8 @@ def process_aspect_df(phase, df):
                    (df[aspect1] == 1) &
                    (df[aspect2] == 0)]
     red_amber['Result'] = '1'
-    red_amber['Phase'] = phase
-    red_amber_output_filename = phase + '_' + 'redAmber_result_out.csv'
+    red_amber['Phase'] = stage
+    red_amber_output_filename = stage + '_' + 'redAmber_result_out.csv'
     red_amber.to_csv(raw_output_folder + red_amber_output_filename, sep=',')
 
     # process amber results
@@ -98,8 +132,8 @@ def process_aspect_df(phase, df):
                (df[aspect1] == 1) &
                (df[aspect2] == 0)]
     amber['Result'] = '2'
-    amber['Phase'] = phase
-    amber_output_filename = phase + '_' + 'amber_result_out.csv'
+    amber['Phase'] = stage
+    amber_output_filename = stage + '_' + 'amber_result_out.csv'
     amber.to_csv(raw_output_folder + amber_output_filename, sep=',')
 
     # process green results
@@ -107,8 +141,8 @@ def process_aspect_df(phase, df):
                (df[aspect1] == 0) &
                (df[aspect2] == 1)]
     green['Result'] = '3'
-    green['Phase'] = phase
-    green_output_filename = phase + '_' + 'green_result_out.csv'
+    green['Phase'] = stage
+    green_output_filename = stage + '_' + 'green_result_out.csv'
     green.to_csv(raw_output_folder + green_output_filename, sep=',')
 
     # process errors (do not write to file)
@@ -117,8 +151,14 @@ def process_aspect_df(phase, df):
         print("Errors removed (not written to file)...")
 
 
-# run data extract
 def extract(raw_data, cfg_file):
+    """
+    Run data extract method.
+
+    :param dataframe raw_data: CSV-formatted raw data
+    :param string cfg_file: location of the configuration file
+    """
+
     # get folder to store results of all phases
     create_folder_if_not_exists(results_folder)
 
@@ -130,6 +170,6 @@ def extract(raw_data, cfg_file):
     phase_list = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
     extract_phase_data(phase_list, source_data_df)
 
-    # then get the i/o data using detector fields
+    # then get the I/O data using detector fields
     detector_fields = get_detector_fields(cfg_file)
     extract_io_data(detector_fields, source_data_df)

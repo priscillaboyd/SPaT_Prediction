@@ -13,15 +13,8 @@
 # limitations under the License.
 # ==============================================================================
 
-"""The Analyser class:
-
-    Prepares the data by:
-    - Creating a CSV file with phase, result (red, red/amber, amber, green), record date/time
-
-    Allows analysis to be run:
-    - Correlation analysis between phases
-    - Plotting data for limited amount of time (to avoid data cluttered which will prevent useful visualisation)
-
+"""
+    The Main module runs the data analysis for the latest processed data.
 """
 
 from analysis.Analyser import run_analysis

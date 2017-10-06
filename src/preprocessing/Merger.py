@@ -13,19 +13,24 @@
 # limitations under the License.
 # ==============================================================================
 
-"""The Merger class combines the data by:
-
-    - Merging all phase data and I/O detection data into a single data set CSV file
-
+"""
+    The Merger class combines the data by merging all phase data and I/O detection data into a single data set CSV file.
 """
 
 import pandas as pd
 from tools.Utils import results_folder, output_fields
 
 
-# combine all data into single file
 def data_merge(detector_fields):
+    """
+    Combine all processed data into a single dataset file.
+
+    :param list[str] detector_fields: list of strings with detector names
+    :return: location of dataset
+    :rtype: string
+    """
     print("Merging final data...")
+
     # load files that contain phase and I/O processed data and store as dfs
     phase_data = pd.read_csv(results_folder + 'phases/processed/clean_merged_phases.csv', header=0,
                              skipinitialspace=True, usecols=output_fields)
@@ -40,6 +45,9 @@ def data_merge(detector_fields):
     # store the output with any duplicates dropped and create a final CSV file
     merged_df = output.drop_duplicates()
     merged_df.to_csv(results_folder + 'dataset.csv', sep=',', index=False)
+
     print("Data merged!")
     print("Main dataset available: " + results_folder + 'dataset.csv')
+
+    # return location of dataset
     return results_folder + 'dataset.csv'

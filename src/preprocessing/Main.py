@@ -13,24 +13,22 @@
 # limitations under the License.
 # ==============================================================================
 
-"""The Main class is responsible for running methods to:
+"""The Main module is responsible for running methods:
 
-    - Extract data from a given CSV file with historic traffic information
-    - Clean data as part of pre-processing for machine learning
-    - Merge data into a single file for manipulation
-    - Adapt to be used with the scikit-learn framework
+    -  To extract data from a given CSV file with historic traffic information.
+    -  Clean data as part of pre-processing for machine learning.
+    -  Merge data into a single file for manipulation.
+    -  Adapt to be used with the scikit-learn framework.
 
 """
 from preprocessing.Cleaner import clean
 from preprocessing.Extractor import extract
 from preprocessing.Merger import data_merge
-from preprocessing.SkLearnProcessor import sklearn_data_processing_with_duration, \
-    sklearn_data_processing_with_io, sklearn_data_processing_without_io
+from preprocessing.SkLearnProcessor import sklearn_data_processing_with_duration, sklearn_data_processing_with_io, \
+    sklearn_data_processing_without_io
 from tools.Utils import get_detector_fields
 
-# raw_data = 'merged_data_complete.csv'
-# raw_data = '20170929_until_20171003_e80374.csv'
-raw_data = '30min.csv'
+raw_data = '20170929_until_20171003_e80374.csv'
 cfg_file = 'e80374.8SD'
 
 if __name__ == '__main__':

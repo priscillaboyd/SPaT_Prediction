@@ -12,13 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
-"""The Main class:
-
-    - Runs the RNN LSTM.
-
+"""
+    The Main module runs the Recurrent Neural Network using Long Short-Term Memory architecture.
 """
 
-# main function
 from neural_network.RNN_LSTM import run_rnn
 from tools.Utils import get_latest_dataset
 

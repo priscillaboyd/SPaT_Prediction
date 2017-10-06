@@ -12,25 +12,28 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
-"""The RNN_LSTM class:
-
-    - Implements a recurrent neural network using LSTM.
-
+"""
+    The RNN_LSTM module implements a recurrent neural network using LSTM.
 """
 
 import csv
-import matplotlib.pyplot as plt
 import numpy as np
 from keras.layers.core import Dense, Activation, Dropout
 from keras.layers.recurrent import LSTM
 from keras.models import Sequential
 from tools.Utils import current_dt, get_latest_dataset_folder, get_latest_dataset
 
-# np.random.seed(1234)
 
-
-# split data between test and training examples
 def split_test_training(data_path, sequence_length):
+    """
+    Split data between test and training examples.
+
+    :param string data_path: Location of CSV-formatted data
+    :param int sequence_length: Sequence length (temporal window) to be used
+    :return: Training examples (X_train), training targets (y_train), test examples (X_test) and test targets (y_test)
+    :rtype: dataframe, dataframe, dataframe, dataframe
+    """
+
     # logic for loading the CSV, using 'result' (2nd) column as basis for prediction
     with open(data_path) as f:
         record = csv.reader(f, delimiter=",")
@@ -61,8 +64,13 @@ def split_test_training(data_path, sequence_length):
     return [X_train, y_train, X_test, y_test]
 
 
-# build model using Keras' Sequential
 def build_model():
+    """
+    Build the learning RNN model using Keras (Sequential) module.
+
+    :return: RNN model
+    :rtype: History object
+    """
     model = Sequential()
 
     # declare the sizes of the layers (1d input and output)
@@ -89,6 +97,13 @@ def build_model():
 
 def run_rnn(file):
     # define model params
+    """
+    Run the process to train/test a recurrent neural network using LSTM using a given dataset file.
+
+    :param string file: Location of CSV-formatted dataset file
+    :return: Model with expected (test) targets and associated scores
+    :rtype: object, dataframe, object
+    """
     num_epochs = 2
     sequence_length = 20
 

@@ -13,12 +13,9 @@
 # limitations under the License.
 # ==============================================================================
 
-"""The CART class:
-
-    - Implements the CART algorithm for decision trees to create model using data provided
-    - Provides the score
-    - Plots the data and saves to file for analysis
-
+"""
+    The CART module implements the Classification and Regression Tree algorithm for decision trees to create a model
+    using data provided, performing training/testing and providing the score.
 """
 
 from sklearn.model_selection import GridSearchCV
@@ -26,8 +23,16 @@ from sklearn.tree import DecisionTreeRegressor
 from decision_tree.DT_Utils import score_dt, plot_dt, save_dt_model
 
 
-# run CART algorithm for decision trees
 def run_cart(X_train, X_test, y_train, y_test, output_folder):
+    """
+    Run the Classification and Regression Tree algorithm.
+
+    :param dataframe X_train: training examples
+    :param dataframe X_test: test examples
+    :param dataframe y_train: target training examples
+    :param dataframe y_test: target test examples
+    :param output_folder: location of the output / results
+    """
 
     # initialise model
     dt_model = DecisionTreeRegressor()

@@ -13,12 +13,11 @@
 # limitations under the License.
 # ==============================================================================
 
-"""The Cleaner class cleans the data by:
+"""The Cleaner module cleans the data by:
 
-    - Taking CSV files with stage/phase information and filtering them, leaving date, time, result and phase fields
-    - Taking individual files for stages (with data/time and result) and merging into a single file
-    - Removing duplicates from the files merged
-
+    -  Taking CSV files with stage/phase information and filtering them, leaving date, time, result and phase fields.
+    -  Taking individual files for stages (with data/time and result) and merging into a single file.
+    -  Removing duplicates from the files merged.
 """
 
 import os
@@ -28,8 +27,10 @@ from tools.Utils import create_folder_if_not_exists, output_fields, \
     raw_output_folder, results_folder
 
 
-# filter phase data for files in raw data folder to ensure only desired fields are taken
 def filter_phase_data():
+    """
+        Filter phase data for files in raw data folder to ensure only desired fields are taken.
+    """
     print("Filtering phase data...")
 
     # path to analyse
@@ -57,8 +58,10 @@ def filter_phase_data():
     print("Phase data filtered!")
 
 
-# combine data from processed/filtered data to a single file
 def combine_phase_data():
+    """
+        Combine data from processed/filtered data to a single file.
+    """
     print("Combining phase data...")
 
     # create an empty data frame
@@ -80,8 +83,10 @@ def combine_phase_data():
     print("Data combined!")
 
 
-# remove duplicates from the file (i.e. ensuring only one record per second)
 def remove_duplicates_phase_data():
+    """
+        Remove duplicates from the file (i.e. ensuring only one record per second).
+    """
     print("Removing any duplicates...")
     merged_phases_data = pd.read_csv(results_folder + 'phases/raw/merged_phases.csv', header=0,
                                      skipinitialspace=True, usecols=output_fields)
@@ -91,8 +96,10 @@ def remove_duplicates_phase_data():
     print("Duplicates removed!")
 
 
-# run data cleaning processes
 def clean():
+    """
+        Run data cleaning processes.
+    """
     filter_phase_data()
     combine_phase_data()
     remove_duplicates_phase_data()

@@ -13,11 +13,10 @@
 # limitations under the License.
 # ==============================================================================
 
-"""The ExtractSkLearn class prepares the data for sklearn models by:
+"""The ExtractSkLearn module prepares the data for scikit-learn by:
 
-    - Creating a CSV file with phase, result, duration until change of each state
-    - Ensures the data is suitable for sklearn (e.g. phase types are represented numerically)
-
+    -  Creating a CSV file with phase, result, duration until change of each state.
+    -  Ensuring the data is suitable for sklearn (e.g. phase types are represented numerically).
 """
 import pandas as pd
 from tools.Utils import results_folder
@@ -29,8 +28,12 @@ phase_list = ['A', 'B', 'C', 'D']
 subset_columns = ['Date', 'Time', 'Result', 'Phase']
 
 
-# process data for scikit-learn without i/o
 def sklearn_data_processing_without_io(merged_data):
+    """
+    Process data for scikit-learn without i/o
+
+    :param string merged_data: location of CSV-formatted dataset
+    """
     print("Creating scikit-Learn dataset without I/O information...")
     phase_data = pd.read_csv(merged_data, header=0, skipinitialspace=True)
     df = pd.DataFrame(phase_data)
@@ -44,8 +47,12 @@ def sklearn_data_processing_without_io(merged_data):
     print("New scikit-learn dataset without i/o data available: " + results_folder + "sklearn_dataset_without_io.csv")
 
 
-# process data for scikit-learn with i/o
 def sklearn_data_processing_with_io(merged_data):
+    """
+    Process data for scikit-learn taking I/O inputs.
+
+    :param string merged_data: location of CSV-formatted dataset
+    """
     print("Creating scikit-Learn dataset with I/O information...")
     phase_data = pd.read_csv(merged_data, header=0, skipinitialspace=True)
     df = pd.DataFrame(phase_data)
@@ -56,8 +63,12 @@ def sklearn_data_processing_with_io(merged_data):
     print("New scikit-learn dataset with i/o data available: " + results_folder + "sklearn_dataset_io.csv")
 
 
-# process data for scikit-learn with aggregated duration information
 def sklearn_data_processing_with_duration(merged_data):
+    """
+    Process data for scikit-learn with duration information.
+
+    :param string merged_data: location of CSV-formatted dataset
+    """
     print("Creating scikit-learn dataset with duration information...")
 
     # load data and parse date/time to a single Date_Time column
