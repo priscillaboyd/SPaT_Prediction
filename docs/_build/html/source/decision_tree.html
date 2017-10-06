@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>decision_tree package &#8212; SPaT Prediction  documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="decision-tree-package">
+<h1>decision_tree package<a class="headerlink" href="#decision-tree-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-decision_tree.CART">
+<span id="decision-tree-cart-module"></span><h2>decision_tree.CART module<a class="headerlink" href="#module-decision_tree.CART" title="Permalink to this headline">¶</a></h2>
+<p>The CART module implements the Classification and Regression Tree algorithm for decision trees to create a model
+using data provided, performing training/testing and providing the score.</p>
+<dl class="function">
+<dt id="decision_tree.CART.run_cart">
+<code class="descclassname">decision_tree.CART.</code><code class="descname">run_cart</code><span class="sig-paren">(</span><em>X_train</em>, <em>X_test</em>, <em>y_train</em>, <em>y_test</em>, <em>output_folder</em><span class="sig-paren">)</span><a class="headerlink" href="#decision_tree.CART.run_cart" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the Classification and Regression Tree algorithm.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>X_train</strong> (<em>dataframe</em>) &#8211; training examples</li>
+<li><strong>X_test</strong> (<em>dataframe</em>) &#8211; test examples</li>
+<li><strong>y_train</strong> (<em>dataframe</em>) &#8211; target training examples</li>
+<li><strong>y_test</strong> (<em>dataframe</em>) &#8211; target test examples</li>
+<li><strong>output_folder</strong> &#8211; location of the output / results</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-decision_tree.DT_Utils">
+<span id="decision-tree-dt-utils-module"></span><h2>decision_tree.DT_Utils module<a class="headerlink" href="#module-decision_tree.DT_Utils" title="Permalink to this headline">¶</a></h2>
+<p>The DT_Utils module provides helper functions for Decision Tree algorithms implementation, model creation and
+analysis.</p>
+<dl class="function">
+<dt id="decision_tree.DT_Utils.load_dt_model">
+<code class="descclassname">decision_tree.DT_Utils.</code><code class="descname">load_dt_model</code><span class="sig-paren">(</span><em>pickle_model</em><span class="sig-paren">)</span><a class="headerlink" href="#decision_tree.DT_Utils.load_dt_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve model using Pickle binary format.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pickle_model</strong> (<em>string</em>) &#8211; location of Pickle model</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Pickle model for re-use</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="decision_tree.DT_Utils.plot_dt">
+<code class="descclassname">decision_tree.DT_Utils.</code><code class="descname">plot_dt</code><span class="sig-paren">(</span><em>model_name</em>, <em>y_actual</em>, <em>y_test</em>, <em>output_folder</em><span class="sig-paren">)</span><a class="headerlink" href="#decision_tree.DT_Utils.plot_dt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot decision tree, y (training) vs y (test/actual).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>model_name</strong> (<em>string</em>) &#8211; title for the model used on the output filename</li>
+<li><strong>y_actual</strong> (<em>dataframe</em>) &#8211; target results</li>
+<li><strong>y_test</strong> (<em>dataframe</em>) &#8211; test targets</li>
+<li><strong>output_folder</strong> (<em>string</em>) &#8211; location of the output / results</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="decision_tree.DT_Utils.save_dt_model">
+<code class="descclassname">decision_tree.DT_Utils.</code><code class="descname">save_dt_model</code><span class="sig-paren">(</span><em>model_name</em>, <em>model</em>, <em>folder</em><span class="sig-paren">)</span><a class="headerlink" href="#decision_tree.DT_Utils.save_dt_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save model using Pickle binary format.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>model</strong> (<em>dataframe</em>) &#8211; model reference</li>
+<li><strong>model_name</strong> (<em>string</em>) &#8211; title for the model used on the output filename</li>
+<li><strong>folder</strong> (<em>string</em>) &#8211; location of model output</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="decision_tree.DT_Utils.score_dt">
+<code class="descclassname">decision_tree.DT_Utils.</code><code class="descname">score_dt</code><span class="sig-paren">(</span><em>model_name</em>, <em>model</em>, <em>X</em>, <em>y</em>, <em>y_actual</em>, <em>output_folder</em><span class="sig-paren">)</span><a class="headerlink" href="#decision_tree.DT_Utils.score_dt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Score a decision tree model.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>model_name</strong> (<em>string</em>) &#8211; title for the model used on the output filename</li>
+<li><strong>model</strong> (<em>dataframe</em>) &#8211; model reference</li>
+<li><strong>X</strong> (<em>dataframe</em>) &#8211; examples</li>
+<li><strong>y</strong> (<em>dataframe</em>) &#8211; targets</li>
+<li><strong>y_actual</strong> (<em>dataframe</em>) &#8211; target results</li>
+<li><strong>output_folder</strong> (<em>string</em>) &#8211; location of the output / results</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-decision_tree.GBR">
+<span id="decision-tree-gbr-module"></span><h2>decision_tree.GBR module<a class="headerlink" href="#module-decision_tree.GBR" title="Permalink to this headline">¶</a></h2>
+<p>The GBR module implements the Gradient Boosting Regression ensemble for decision trees.</p>
+<dl class="function">
+<dt id="decision_tree.GBR.run_gbr">
+<code class="descclassname">decision_tree.GBR.</code><code class="descname">run_gbr</code><span class="sig-paren">(</span><em>X_train</em>, <em>X_test</em>, <em>y_train</em>, <em>y_test</em>, <em>output_folder</em><span class="sig-paren">)</span><a class="headerlink" href="#decision_tree.GBR.run_gbr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the Gradient Boosting Regression ensemble algorithm.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>X_train</strong> (<em>string</em>) &#8211; training examples</li>
+<li><strong>X_test</strong> (<em>string</em>) &#8211; test examples</li>
+<li><strong>y_train</strong> (<em>dataframe</em>) &#8211; target training examples</li>
+<li><strong>y_test</strong> (<em>dataframe</em>) &#8211; target test examples</li>
+<li><strong>output_folder</strong> &#8211; location of the output / results</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="decision-tree-main-module">
+<h2>decision_tree.Main module<a class="headerlink" href="#decision-tree-main-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-decision_tree">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-decision_tree" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">decision_tree package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-decision_tree.CART">decision_tree.CART module</a></li>
+<li><a class="reference internal" href="#module-decision_tree.DT_Utils">decision_tree.DT_Utils module</a></li>
+<li><a class="reference internal" href="#module-decision_tree.GBR">decision_tree.GBR module</a></li>
+<li><a class="reference internal" href="#decision-tree-main-module">decision_tree.Main module</a></li>
+<li><a class="reference internal" href="#module-decision_tree">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/source/decision_tree.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Priscilla Boyd.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../_sources/source/decision_tree.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

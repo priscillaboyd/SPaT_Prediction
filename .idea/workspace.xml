@@ -1,28 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f613a19-c67f-414e-8128-21c222c50d50" name="Default" comment="Adapted comments with">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Definitions.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/sample_data_small.csv" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="9f613a19-c67f-414e-8128-21c222c50d50" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/doctrees/environment.pickle" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/doctrees/index.doctree" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/doctrees/source/analysis.doctree" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/doctrees/source/decision_tree.doctree" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/doctrees/source/modules.doctree" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/doctrees/source/neural_network.doctree" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/doctrees/source/preprocessing.doctree" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/doctrees/source/tools.doctree" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/_static/ajax-loader.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/_static/comment-bright.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/_static/comment-close.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/_static/comment.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/_static/down-pressed.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/_static/down.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/_static/file.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/_static/minus.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/_static/plus.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/_static/up-pressed.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/_static/up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/objects.inv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/Makefile" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/.buildinfo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/_sources/index.rst.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/_sources/source/analysis.rst.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/_sources/source/decision_tree.rst.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/_sources/source/modules.rst.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/_sources/source/neural_network.rst.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/_sources/source/preprocessing.rst.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/_sources/source/tools.rst.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/_static/alabaster.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/_static/basic.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/_static/custom.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/_static/doctools.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/_static/jquery-3.1.0.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/_static/jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/_static/pygments.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/_static/searchtools.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/_static/underscore-1.3.1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/_static/underscore.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/_static/websupport.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/genindex.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/py-modindex.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/search.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/searchindex.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/source/analysis.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/source/decision_tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/source/modules.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/source/neural_network.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/source/preprocessing.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/_build/html/source/tools.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/conf.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/index.rst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/make.bat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/analysis.rst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/decision_tree.rst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/modules.rst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/neural_network.rst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/preprocessing.rst" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/source/tools.rst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analysis/Analyser.py" afterPath="$PROJECT_DIR$/src/analysis/Analyser.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analysis/Extractor.py" afterPath="$PROJECT_DIR$/src/analysis/Extractor.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analysis/Main.py" afterPath="$PROJECT_DIR$/src/analysis/Main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analysis/Plotter.py" afterPath="$PROJECT_DIR$/src/analysis/Plotter.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decision_tree/CART.py" afterPath="$PROJECT_DIR$/src/decision_tree/CART.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decision_tree/DT_Utils.py" afterPath="$PROJECT_DIR$/src/decision_tree/DT_Utils.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decision_tree/GBR.py" afterPath="$PROJECT_DIR$/src/decision_tree/GBR.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/decision_tree/Main.py" afterPath="$PROJECT_DIR$/src/decision_tree/Main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/neural_network/Main.py" afterPath="$PROJECT_DIR$/src/neural_network/Main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/neural_network/RNN_LSTM.py" afterPath="$PROJECT_DIR$/src/neural_network/RNN_LSTM.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/preprocessing/Cleaner.py" afterPath="$PROJECT_DIR$/src/preprocessing/Cleaner.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/preprocessing/Extractor.py" afterPath="$PROJECT_DIR$/src/preprocessing/Extractor.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/preprocessing/Main.py" afterPath="$PROJECT_DIR$/src/preprocessing/Main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/preprocessing/Merger.py" afterPath="$PROJECT_DIR$/src/preprocessing/Merger.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/preprocessing/SkLearnProcessor.py" afterPath="$PROJECT_DIR$/src/preprocessing/SkLearnProcessor.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tools/Utils.py" afterPath="$PROJECT_DIR$/src/tools/Utils.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/TestUtils.py" afterPath="$PROJECT_DIR$/test/TestUtils.py" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,11 +81,9 @@
       <file leaf-file-name="RNN_LSTM.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/neural_network/RNN_LSTM.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="30" column="59" lean-forward="true" selection-start-line="30" selection-start-column="59" selection-end-line="30" selection-end-column="59" />
-              <folding>
-                <element signature="e#764#774#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="175">
+              <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -289,74 +327,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SPaT_Prediction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SPaT_Prediction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SPaT_Prediction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SPaT_Prediction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="neural_network" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SPaT_Prediction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SPaT_Prediction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="decision_tree" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SPaT_Prediction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SPaT_Prediction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="analysis" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -996,7 +966,14 @@
       <option name="project" value="LOCAL" />
       <updated>1507053674826</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Adapted comments with reStructuredText format to create reference docs, fixed priscillaboyd/SPaT_Prediction#8">
+      <created>1507309587820</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1507309587820</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1107,7 +1084,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Fix to issue priscillaboyd/SPaT_prediction#1" />
     <MESSAGE value="Fix to issue priscillaboyd/SPaT_prediction#2" />
     <MESSAGE value="Reorganised folder structure" />
     <MESSAGE value="Added sample data" />
@@ -1132,7 +1108,8 @@
     <MESSAGE value="Fixed issue where scores were written twice to file." />
     <MESSAGE value="Removed redundant plotting functionality, added new Main file for RNN" />
     <MESSAGE value="Corrected readme's license file reference." />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrected readme's license file reference." />
+    <MESSAGE value="Adapted comments with reStructuredText format to create reference docs, fixed priscillaboyd/SPaT_Prediction#8" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adapted comments with reStructuredText format to create reference docs, fixed priscillaboyd/SPaT_Prediction#8" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1531,11 +1508,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/neural_network/RNN_LSTM.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="30" column="59" lean-forward="true" selection-start-line="30" selection-start-column="59" selection-end-line="30" selection-end-column="59" />
-          <folding>
-            <element signature="e#764#774#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="175">
+          <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>

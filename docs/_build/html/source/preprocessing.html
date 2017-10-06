@@ -1,0 +1,355 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>preprocessing package &#8212; SPaT Prediction  documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="preprocessing-package">
+<h1>preprocessing package<a class="headerlink" href="#preprocessing-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-preprocessing.Cleaner">
+<span id="preprocessing-cleaner-module"></span><h2>preprocessing.Cleaner module<a class="headerlink" href="#module-preprocessing.Cleaner" title="Permalink to this headline">¶</a></h2>
+<p>The Cleaner module cleans the data by:</p>
+<ul class="simple">
+<li>Taking CSV files with stage/phase information and filtering them, leaving date, time, result and phase fields.</li>
+<li>Taking individual files for stages (with data/time and result) and merging into a single file.</li>
+<li>Removing duplicates from the files merged.</li>
+</ul>
+<dl class="function">
+<dt id="preprocessing.Cleaner.clean">
+<code class="descclassname">preprocessing.Cleaner.</code><code class="descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#preprocessing.Cleaner.clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run data cleaning processes.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="preprocessing.Cleaner.combine_phase_data">
+<code class="descclassname">preprocessing.Cleaner.</code><code class="descname">combine_phase_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#preprocessing.Cleaner.combine_phase_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Combine data from processed/filtered data to a single file.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="preprocessing.Cleaner.filter_phase_data">
+<code class="descclassname">preprocessing.Cleaner.</code><code class="descname">filter_phase_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#preprocessing.Cleaner.filter_phase_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter phase data for files in raw data folder to ensure only desired fields are taken.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="preprocessing.Cleaner.remove_duplicates_phase_data">
+<code class="descclassname">preprocessing.Cleaner.</code><code class="descname">remove_duplicates_phase_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#preprocessing.Cleaner.remove_duplicates_phase_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove duplicates from the file (i.e. ensuring only one record per second).</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-preprocessing.Extractor">
+<span id="preprocessing-extractor-module"></span><h2>preprocessing.Extractor module<a class="headerlink" href="#module-preprocessing.Extractor" title="Permalink to this headline">¶</a></h2>
+<p>The Extractor module extracts the data by:</p>
+<ul class="simple">
+<li>Processing a traffic simulator file in the expected CSV format.</li>
+<li>Outputting results for a phase state (i.e. red = 0, red/amber = 1, amber = 2 or green = 3) using aspect I/O data.</li>
+<li>Extracting the relevant detection data and saving it to a separate CSV file.</li>
+</ul>
+<dl class="function">
+<dt id="preprocessing.Extractor.create_aspect_df">
+<code class="descclassname">preprocessing.Extractor.</code><code class="descname">create_aspect_df</code><span class="sig-paren">(</span><em>stage</em>, <em>df</em><span class="sig-paren">)</span><a class="headerlink" href="#preprocessing.Extractor.create_aspect_df" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create initial data frame for a given stage using aspect I/O data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>stage</strong> (<em>string</em>) &#8211; Name of stage</li>
+<li><strong>df</strong> (<em>dataframe</em>) &#8211; CSV-formatted data with I/O aspect states</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Data frame for grouped aspect I/O data</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dataframe</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="preprocessing.Extractor.extract">
+<code class="descclassname">preprocessing.Extractor.</code><code class="descname">extract</code><span class="sig-paren">(</span><em>raw_data</em>, <em>cfg_file</em><span class="sig-paren">)</span><a class="headerlink" href="#preprocessing.Extractor.extract" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run data extract method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>raw_data</strong> (<em>dataframe</em>) &#8211; CSV-formatted raw data</li>
+<li><strong>cfg_file</strong> (<em>string</em>) &#8211; location of the configuration file</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="preprocessing.Extractor.extract_io_data">
+<code class="descclassname">preprocessing.Extractor.</code><code class="descname">extract_io_data</code><span class="sig-paren">(</span><em>detector_fields</em>, <em>df</em><span class="sig-paren">)</span><a class="headerlink" href="#preprocessing.Extractor.extract_io_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract detection I/O data from a given data frame using pre-defined detector names.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>detector_fields</strong> (<em>list</em><em>[</em><em>str</em><em>]</em><em></em>) &#8211; list containing strings associated to the names of each detector</li>
+<li><strong>df</strong> (<em>dataframe</em>) &#8211; CSV-formatted data with I/O states</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="preprocessing.Extractor.extract_phase_data">
+<code class="descclassname">preprocessing.Extractor.</code><code class="descname">extract_phase_data</code><span class="sig-paren">(</span><em>stage_list</em>, <em>df</em><span class="sig-paren">)</span><a class="headerlink" href="#preprocessing.Extractor.extract_phase_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract stage data using stage list and given data frame.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>stage_list</strong> (<em>list</em><em>[</em><em>str</em><em>]</em><em></em>) &#8211; list of stage names (e.g. [&#8216;A&#8217;, &#8216;B&#8217;])</li>
+<li><strong>df</strong> (<em>dataframe</em>) &#8211; CSV-formatted data</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="preprocessing.Extractor.process_aspect_df">
+<code class="descclassname">preprocessing.Extractor.</code><code class="descname">process_aspect_df</code><span class="sig-paren">(</span><em>stage</em>, <em>df</em><span class="sig-paren">)</span><a class="headerlink" href="#preprocessing.Extractor.process_aspect_df" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process aspect I/O data to infer red, red/amber, amber or green phase for a given stage</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>stage</strong> (<em>string</em>) &#8211; Name of stage</li>
+<li><strong>df</strong> (<em>dataframe</em>) &#8211; CSV-formatted data with grouped aspect I/O data</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="preprocessing.Extractor.remove_sup_values">
+<code class="descclassname">preprocessing.Extractor.</code><code class="descname">remove_sup_values</code><span class="sig-paren">(</span><em>raw_data</em><span class="sig-paren">)</span><a class="headerlink" href="#preprocessing.Extractor.remove_sup_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ensure non-relevant (SUP) dummy values, which are generated on system startup, are removed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>raw_data</strong> (<em>dataframe</em>) &#8211; raw CSV data</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">raw data excluding SUP values</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dataframe</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-preprocessing.Main">
+<span id="preprocessing-main-module"></span><h2>preprocessing.Main module<a class="headerlink" href="#module-preprocessing.Main" title="Permalink to this headline">¶</a></h2>
+<p>The Main module is responsible for running methods:</p>
+<ul class="simple">
+<li>To extract data from a given CSV file with historic traffic information.</li>
+<li>Clean data as part of pre-processing for machine learning.</li>
+<li>Merge data into a single file for manipulation.</li>
+<li>Adapt to be used with the scikit-learn framework.</li>
+</ul>
+</div>
+<div class="section" id="module-preprocessing.Merger">
+<span id="preprocessing-merger-module"></span><h2>preprocessing.Merger module<a class="headerlink" href="#module-preprocessing.Merger" title="Permalink to this headline">¶</a></h2>
+<p>The Merger class combines the data by merging all phase data and I/O detection data into a single data set CSV file.</p>
+<dl class="function">
+<dt id="preprocessing.Merger.data_merge">
+<code class="descclassname">preprocessing.Merger.</code><code class="descname">data_merge</code><span class="sig-paren">(</span><em>detector_fields</em><span class="sig-paren">)</span><a class="headerlink" href="#preprocessing.Merger.data_merge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Combine all processed data into a single dataset file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>detector_fields</strong> (<em>list</em><em>[</em><em>str</em><em>]</em><em></em>) &#8211; list of strings with detector names</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">location of dataset</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-preprocessing.SkLearnProcessor">
+<span id="preprocessing-sklearnprocessor-module"></span><h2>preprocessing.SkLearnProcessor module<a class="headerlink" href="#module-preprocessing.SkLearnProcessor" title="Permalink to this headline">¶</a></h2>
+<p>The ExtractSkLearn module prepares the data for scikit-learn by:</p>
+<ul class="simple">
+<li>Creating a CSV file with phase, result, duration until change of each state.</li>
+<li>Ensuring the data is suitable for sklearn (e.g. phase types are represented numerically).</li>
+</ul>
+<dl class="function">
+<dt id="preprocessing.SkLearnProcessor.sklearn_data_processing_with_duration">
+<code class="descclassname">preprocessing.SkLearnProcessor.</code><code class="descname">sklearn_data_processing_with_duration</code><span class="sig-paren">(</span><em>merged_data</em><span class="sig-paren">)</span><a class="headerlink" href="#preprocessing.SkLearnProcessor.sklearn_data_processing_with_duration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process data for scikit-learn with duration information.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>merged_data</strong> (<em>string</em>) &#8211; location of CSV-formatted dataset</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="preprocessing.SkLearnProcessor.sklearn_data_processing_with_io">
+<code class="descclassname">preprocessing.SkLearnProcessor.</code><code class="descname">sklearn_data_processing_with_io</code><span class="sig-paren">(</span><em>merged_data</em><span class="sig-paren">)</span><a class="headerlink" href="#preprocessing.SkLearnProcessor.sklearn_data_processing_with_io" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process data for scikit-learn taking I/O inputs.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>merged_data</strong> (<em>string</em>) &#8211; location of CSV-formatted dataset</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="preprocessing.SkLearnProcessor.sklearn_data_processing_without_io">
+<code class="descclassname">preprocessing.SkLearnProcessor.</code><code class="descname">sklearn_data_processing_without_io</code><span class="sig-paren">(</span><em>merged_data</em><span class="sig-paren">)</span><a class="headerlink" href="#preprocessing.SkLearnProcessor.sklearn_data_processing_without_io" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process data for scikit-learn without i/o</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>merged_data</strong> (<em>string</em>) &#8211; location of CSV-formatted dataset</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-preprocessing">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-preprocessing" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">preprocessing package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-preprocessing.Cleaner">preprocessing.Cleaner module</a></li>
+<li><a class="reference internal" href="#module-preprocessing.Extractor">preprocessing.Extractor module</a></li>
+<li><a class="reference internal" href="#module-preprocessing.Main">preprocessing.Main module</a></li>
+<li><a class="reference internal" href="#module-preprocessing.Merger">preprocessing.Merger module</a></li>
+<li><a class="reference internal" href="#module-preprocessing.SkLearnProcessor">preprocessing.SkLearnProcessor module</a></li>
+<li><a class="reference internal" href="#module-preprocessing">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/source/preprocessing.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Priscilla Boyd.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../_sources/source/preprocessing.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>tools package &#8212; SPaT Prediction  documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="tools-package">
+<h1>tools package<a class="headerlink" href="#tools-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-tools.Utils">
+<span id="tools-utils-module"></span><h2>tools.Utils module<a class="headerlink" href="#module-tools.Utils" title="Permalink to this headline">¶</a></h2>
+<p>The Utils module provides helper functions to be used with other classes relating to data manipulation.</p>
+<dl class="function">
+<dt id="tools.Utils.convert_raw_data_to_df">
+<code class="descclassname">tools.Utils.</code><code class="descname">convert_raw_data_to_df</code><span class="sig-paren">(</span><em>raw_data</em><span class="sig-paren">)</span><a class="headerlink" href="#tools.Utils.convert_raw_data_to_df" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts CSV-formatted raw data into a Pandas data frame</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>raw_data</strong> (<em>string</em>) &#8211; location of CSV-formatted raw data</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Data as dataframe</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dataframe</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="tools.Utils.create_folder_if_not_exists">
+<code class="descclassname">tools.Utils.</code><code class="descname">create_folder_if_not_exists</code><span class="sig-paren">(</span><em>folder</em><span class="sig-paren">)</span><a class="headerlink" href="#tools.Utils.create_folder_if_not_exists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a folder if it does not already exist.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>folder</strong> (<em>string</em>) &#8211; location of folder</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="tools.Utils.get_detector_fields">
+<code class="descclassname">tools.Utils.</code><code class="descname">get_detector_fields</code><span class="sig-paren">(</span><em>cfg_file</em><span class="sig-paren">)</span><a class="headerlink" href="#tools.Utils.get_detector_fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add date/time fields to the detector fields.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cfg_file</strong> (<em>string</em>) &#8211; location of configuration file.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Dataframe with date/time fields</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dataframe</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="tools.Utils.get_io_list_from_config">
+<code class="descclassname">tools.Utils.</code><code class="descname">get_io_list_from_config</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#tools.Utils.get_io_list_from_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get list of detector I/O names and their IDs via a given configuration file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>string</em>) &#8211; location of configuration file</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">List of I/O names</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list[str]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="tools.Utils.get_latest_dataset">
+<code class="descclassname">tools.Utils.</code><code class="descname">get_latest_dataset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tools.Utils.get_latest_dataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the latest dataset (generic, i.e. dataset.csv file as created by the PreProcessing module).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Location of the latest generic dataset</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="tools.Utils.get_latest_dataset_folder">
+<code class="descclassname">tools.Utils.</code><code class="descname">get_latest_dataset_folder</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tools.Utils.get_latest_dataset_folder" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div>Return the location of the latest dataset in the &#8216;results&#8217; folder.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Location of the latest dataset</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="tools.Utils.get_sklearn_X_y">
+<code class="descclassname">tools.Utils.</code><code class="descname">get_sklearn_X_y</code><span class="sig-paren">(</span><em>file</em>, <em>duration</em>, <em>datetime</em><span class="sig-paren">)</span><a class="headerlink" href="#tools.Utils.get_sklearn_X_y" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return x and y values to be used with the scikit-learn framework.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>file</strong> (<em>string</em>) &#8211; Location of the latest scikit-learn dataset</li>
+<li><strong>duration</strong> (<em>boolean</em>) &#8211; Indicates whether dataset contains duration data</li>
+<li><strong>datetime</strong> (<em>boolean</em>) &#8211; Indicates whether dataset contains timestamped records</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">x and y values for scikit-learn model as individual dataframes</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">dataframe, dataframe</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><strong>ValueError</strong> &#8211; if both duration and date/time are set to True.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="tools.Utils.get_sklearn_data_with_duration">
+<code class="descclassname">tools.Utils.</code><code class="descname">get_sklearn_data_with_duration</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tools.Utils.get_sklearn_data_with_duration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the latest scikit-learn dataset with duration data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Location of the latest scikit-learn dataset with duration data.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="tools.Utils.get_sklearn_data_with_io">
+<code class="descclassname">tools.Utils.</code><code class="descname">get_sklearn_data_with_io</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tools.Utils.get_sklearn_data_with_io" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return data the latest scikit-learn dataset with I/O data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Location of the latest scikit-learn dataset with I/O data.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="tools.Utils.get_sklearn_data_without_io">
+<code class="descclassname">tools.Utils.</code><code class="descname">get_sklearn_data_without_io</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tools.Utils.get_sklearn_data_without_io" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return data the latest scikit-learn dataset without I/O data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Location of the latest scikit-learn dataset without I/O data.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="tools.Utils.print_number_records">
+<code class="descclassname">tools.Utils.</code><code class="descname">print_number_records</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#tools.Utils.print_number_records" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print out the number of records in a given CSV file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> &#8211; location of the CSV-formatted file</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-tools">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-tools" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">tools package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-tools.Utils">tools.Utils module</a></li>
+<li><a class="reference internal" href="#module-tools">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/source/tools.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Priscilla Boyd.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../_sources/source/tools.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
