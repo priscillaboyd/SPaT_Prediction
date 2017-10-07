@@ -3,7 +3,8 @@
 This project enables the prediction of signal phase timing (SPaT) in fixed and adaptive environments by using a 
 combination of machine learning techniques and historical traffic data.
 
-This engine has been developed to support a dissertation towards an MSc in Software Engineering at the University of 
+It has been developed to support a dissertation titled _"A study of machine learning algorithms and their 
+suitability for predicting traffic signal timing"_ towards an MSc in Software Engineering at the University of 
 Oxford.
 
 ## Features
@@ -72,7 +73,7 @@ The following versions (or newer) are required to run SPaT Prediction:
 
 ## Author
 
-* **Priscilla Boyd** - [priscillaboyd](https://github.com/priscillaboyd)
+* **Priscilla Nagashima Boyd** - [priscillaboyd](https://github.com/priscillaboyd)
 
 
 ## License
