@@ -1,12 +1,15 @@
 # Signal Phase & Timing (SPaT) Prediction
 
-Predicts signal phase and timing (SPaT) by using a combination of machine learning techniques and historical traffic data.
+This project enables the prediction of signal phase timing (SPaT) in fixed and adaptive environments by using a 
+combination of machine learning techniques and historical traffic data.
 
-This engine has been initially developed to support a dissertation towards an MSc in Software Engineering for the University of Oxford.
+This engine has been developed to support a dissertation towards an MSc in Software Engineering at the University of 
+Oxford.
 
 ## Features
 
-* Takes historical traffic controller signal phase and detection data to create datasets suitable for machine learning analyses
+* Takes historical traffic controller signal phase and detection data to create datasets suitable for machine learning
+analyses
 * Enables feature extraction from data to provide signal state and phase duration
 * Implements the Classification and Regression Tree (CART) for SPaT prediction.
 * Implements Recurrent Neural Network with Long Short-Term Memory for SPaT prediction.
@@ -17,7 +20,8 @@ This engine has been initially developed to support a dissertation towards an MS
 The software has been divided into five packages:
 * **Pre-Processing**: processes the data in the expected format, creating datasets for usage with Decision Tree and Neural Network model creation
 * **Analysis**: manipulates the data for analysis, creating plots for further understanding
-* **Decision Tree**: implements the Classification and Regression Tree (CART) algorithm to predict SPaT
+* **Decision Tree**: implements the Classification and Regression Tree (CART) algorithm and Gradient Boosting 
+Regression (GBR) ensemble algorithm to predict SPaT
 * **Neural Network**: implements a Recurrent Neural Network (RNN) using Long Short-Term Memory (LSTM) to predict SPaT
 * **Tools**: provides a number of helper functions that are re-used throughout the other packages
 
@@ -36,14 +40,21 @@ read the Siemens[handbook](https://www.siemens.co.uk/traffic/pool/downloads/hand
 
 ### Historical Traffic Data
 
-The prediction engine takes historical traffic data in three comma-separated (CSV) four formats.
+The prediction engine takes historical traffic data in three comma-separated (CSV) four formats to create the
+learning models.
 
 | Format ID | Description | Used in |
 | ------------- | ------------- | ------------- | 
 | 1 | Timestamped phase/stage with detection I/O state information  | RNN LSTM  |
-| 2 | Timestamped phase/stage with detection I/O state information (numerical values only)  | DT/GBR  |
-| 3 | Timestamped phase/stage without detection I/O state information (numerical values only)  | DT/GBR  |
-| 4 | Dated phase/stage with start/end times and duration information (numerical values only)  | DT/GBR  |
+| 2 | Timestamped phase/stage with detection I/O state information (numerical values only)  | CART/GBR  |
+| 3 | Timestamped phase/stage without detection I/O state information (numerical values only)  | CART/GBR  |
+| 4 | Dated phase/stage with start/end times and duration information (numerical values only)  | CART/GBR  |
+
+
+Notes:
+* 1 and 2 differ simply in terms of data presentation (with 2 only using numerical values due to limitations with the
+platform used).
+* Examples of the data in the 4 formats as above are included in the project (within the 'data' folder).
 
 ### Pre-requisites
 
@@ -67,3 +78,9 @@ The following versions (or newer) are required to run SPaT Prediction:
 ## License
 
 This project is licensed under the Apache Licence 2.0 - see the [LICENSE](LICENSE) file for further information
+
+### Citation
+If you use SPaT Prediction, we would appreciate a citation :blush: :
+
+`A study of machine learning algorithms and their suitability
+for predicting traffic signal timing, Nagashima Boyd, P., University of Oxford, 2017.`
