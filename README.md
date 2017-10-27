@@ -61,14 +61,14 @@ platform used).
 
 The following versions (or newer) are required to run SPaT Prediction:
 
-* Keras 2.0.3
-* matplotlib 2.0.2
-* NumPy 1.13.1
-* Pandas 0.20.3
-* Python 3.5.2
-* seaborn 0.8
-* scikit-learn 0.19.0
-* TensorFlow 1.0.0
+* Keras - v2.0.3
+* matplotlib - v2.0.2
+* NumPy - v1.13.1
+* Pandas - v0.20.3
+* Python - v3.5.2
+* seaborn - v0.8
+* scikit-learn - v0.19.0
+* TensorFlow - v1.0.0
 
 
 ## Author
